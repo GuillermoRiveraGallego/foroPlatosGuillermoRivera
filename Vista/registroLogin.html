@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro del Usuario</title>
+  <link rel="stylesheet" href="css/loginCss.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <form action="#" method="post">
+
+      <h2>Registro</h2>
+
+      <div class="input-field">
+        <input type="text" name="nombrePropioUsuario" required>
+        <label>Nombre</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="ApellidosPropioUsuario" required>
+        <label>Apellidos</label>
+      </div>
+
+        <div class="input-field">
+        <input type="text" name="nombreUsuario" required>
+        <label>Nombre de Usuario</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="contrasena" required>
+        <label>Contraseña</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="contrasenaRepetida" required>
+        <label>Repita contraseña</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" name="emailUsuario" required>
+        <label>Email</label>
+      </div>
+
+      <div class="fotoPerfil">
+      <p style="color: white;">Foto perfil</p>
+     </div>
+      
+      <div class="input-field">
+        <input type="file" name="fotoPerfil" accept=".jpg, .png, .jpeg" required>
+      </div>
+
+      <button type="submit" name="enviar">Registrarme</button>
+
+      <div class="register">
+        <p><a href="../Vista/login.html">Volver a login</a></p>
+      </div>
+      
+    </form>
+  </div>
+
+</body>
+</html>
