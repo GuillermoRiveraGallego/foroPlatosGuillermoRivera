@@ -2,7 +2,7 @@
 session_start();
 if (isset($_POST["botonEnviarLogin"])){
 
-    include("../Modelo/consultaLogin.php");
+    include("../Modelo/consultasUsuarios.php");
 
     $nombreUsuarioBaseDatos = selectNombreUsuario($_POST["nombreUsuario"]);
 
@@ -16,11 +16,11 @@ if (isset($_POST["botonEnviarLogin"])){
 
             $_SESSION["login"]=true;
             $_SESSION["tiempoInicioSesion"]=time();
-            header("Location: ../Vista/index.html");
+            header("Location: ../Vista/index.php");
 
         } else {
 
-            echo("credenciales incorrectas");
+            echo("mal");
 
         }
 

@@ -13,7 +13,9 @@ body {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 0 10px;
+  padding: 20px; 
+  overflow: hidden;
+  position: relative;
 }
 
 body::before {
@@ -24,16 +26,22 @@ body::before {
   background: url("../../Imagenes/bgImageLogin.jpg"), #000;
   background-position: center;
   background-size: cover;
+  z-index: -1;
 }
 
 .wrapper {
-  width: 400px;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  margin: auto;
   padding: 30px;
+  border-radius: 8px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  overflow-y: auto;
 }
 
 form {
@@ -74,8 +82,8 @@ h2 {
   color: #fff;
 }
 
-.input-field input:focus~label,
-.input-field input:valid~label {
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
   font-size: 0.8rem;
   top: 10px;
   transform: translateY(-120%);
@@ -136,9 +144,19 @@ button:hover {
   color: #fff;
 }
 
-.fotoPerfil{
-
+.fotoPerfil {
   text-align: left;
   margin-top: 15px;
-
 }
+
+
+/* Esto es para el autocompletado de los nombres del login no se vea mal*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff; 
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+

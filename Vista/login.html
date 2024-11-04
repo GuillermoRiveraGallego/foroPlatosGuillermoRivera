@@ -9,6 +9,13 @@
 </head>
 
 <body>
+
+  <!-- Mostrar el mensaje de error si el parámetro 'error' está en la URL 
+  <?php
+  if (isset($_GET['error']) && $_GET['error'] == 1) {
+      echo '<p class="error">Nombre de usuario o contraseña incorrectos.</p>';
+  }
+  ?>-->
   <div class="wrapper">
     <form action="../Controlador/validarlogin.php" method="post">
 
