@@ -11,20 +11,19 @@ if($numPagina!=$maxPagina){
     echo"<div class='boton'> <br><a href='index.php?numPagina=".($numPagina+1)."'> Siguiente </a></div>";
 }
 
+
+
 echo("</div>");
 ?>
 
 <style>
-
-*{
-    color: white;
-}
 
 .contenedorDeRecetas{
 
 margin-top: 150px;
 justify-content: center;
 text-align: center;
+color: white;
 
 }
 
