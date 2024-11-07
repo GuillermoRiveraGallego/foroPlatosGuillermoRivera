@@ -1,31 +1,37 @@
 <?php
     
+    include("conexionBD.php");
+
     function selectNombreUsuario($nombreUsuario){
-		include "../Modelo/conexionBD.php";
-		$resultado=$pdo->query("SELECT nombre_usuario FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
-		$nombre = $resultado->fetch(PDO::FETCH_ASSOC);
+      
+        $pdo = conexionBaseDatos();
+		    $resultado=$pdo->query("SELECT nombre_usuario FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
+		    $nombre = $resultado->fetch(PDO::FETCH_ASSOC);
 
-        if ($nombre){
+            if ($nombre){
 
-          return $nombre["nombre_usuario"];
+                return $nombre["nombre_usuario"];
 
-        } else {
+            } else {
 
-            return false;
+                return false;
 
-        }
+            }
 
-	}
+	  }
 
-    function selectContrasenaUsuario($nombreUsuario){
-		include "../Modelo/conexionBD.php";
-		$resultado=$pdo->query("SELECT contrasena FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
-		return $resultado->fetch(PDO::FETCH_ASSOC)["contrasena"];
-	}
+      function selectContrasenaUsuario($nombreUsuario){
 
-	function insertarUsuario($nombreImagen){
+        $pdo = conexionBaseDatos();
+
+		    $resultado=$pdo->query("SELECT contrasena FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
+		    return $resultado->fetch(PDO::FETCH_ASSOC)["contrasena"];
+
+	    }
+
+	    function insertarUsuario($nombreImagen){
 		
-        include "../Modelo/conexionBD.php";
+        $pdo = conexionBaseDatos();
 
         $nombreUsuario = $_POST["nombreUsuario"];
         $nombre =  $_POST["nombrePropioUsuario"];

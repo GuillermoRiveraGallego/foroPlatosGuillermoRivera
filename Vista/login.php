@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login de usuario</title>
-  <link rel="stylesheet" href="css/loginCss.css">
-</head>
-
-<body>
-
-  <!-- Mostrar el mensaje de error si el parámetro 'error' está en la URL 
-  <?php
-  if (isset($_GET['error']) && $_GET['error'] == 1) {
-      echo '<p class="error">Nombre de usuario o contraseña incorrectos.</p>';
-  }
-  ?>-->
-  <div class="wrapper">
+<div class="wrapper">
     <form action="../Controlador/validarlogin.php" method="post">
 
       <h2>Login</h2>
@@ -41,11 +23,8 @@
       <button type="submit" name="botonEnviarLogin">Enviar</button>
 
       <div class="register">
-        <p>No tienes cuenta? <a href="../Vista/registroLogin.html">Registrate</a></p>
+        <p>No tienes cuenta? <a href="../Controlador/registro.php">Registrate</a></p>
       </div>
       
     </form>
   </div>
-
-</body>
-</html>

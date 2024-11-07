@@ -23,7 +23,7 @@ if(isset($_POST['enviar'])){
                 insertarUsuario($nombreImagen);
                 $_SESSION["login"]=true;
                 $_SESSION["tiempoInicioSesion"]=time();
-                header("Location: ../Vista/index.php");		
+                header("Location: ../Controlador/index.php");		
         
                 } else {
         
@@ -31,7 +31,7 @@ if(isset($_POST['enviar'])){
                     insertarUsuario($nombreImagen);	
                     $_SESSION["login"]=true;
                     $_SESSION["tiempoInicioSesion"]=time();
-                    header("Location: ../Vista/index.php");
+                    header("Location: ../Controlador/index.php");
         
                 }
 

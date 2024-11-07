@@ -16,7 +16,7 @@ if (isset($_POST["botonEnviarLogin"])){
 
             $_SESSION["login"]=true;
             $_SESSION["tiempoInicioSesion"]=time();
-            header("Location: ../Vista/index.php");
+            header("Location: ../Controlador/index.php");
 
         } else {
 
@@ -27,6 +27,8 @@ if (isset($_POST["botonEnviarLogin"])){
     } else{
 
         echo("credenciales incorrectas");
+        
+        /*como informo del error ?*/
 
     }
 

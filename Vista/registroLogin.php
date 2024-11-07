@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro del Usuario</title>
-  <link rel="stylesheet" href="css/loginCss.css">
-</head>
-
-<body>
-  <div class="wrapper">
+<div class="wrapper">
     <form action="../Controlador/crearUsuario.php" method="post" enctype="multipart/form-data">
 
       <h2>Registro</h2>
@@ -60,6 +49,3 @@
       
     </form>
   </div>
-
-</body>
-</html>
