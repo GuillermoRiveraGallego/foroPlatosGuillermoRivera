@@ -30,6 +30,7 @@ body {
     margin-top: 15px;
     height: 60px;
     background: rgba(0, 0, 0, 0.8);
+    border: solid white 1px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -39,6 +40,13 @@ body {
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+header a{
+
+    text-decoration: none;
+    color: white;
+
 }
 
 /* Estilos del contenido */

@@ -9,8 +9,6 @@ if (isset($_POST["botonEnviarLogin"])){
     if ($nombreUsuarioBaseDatos){
 
         $contrasenaUsuarioBaseDatos = selectContrasenaUsuario($_POST["nombreUsuario"]);
-        /*comprobacion */
-        $contrasenaUsuarioBaseDatos = password_hash($contrasenaUsuarioBaseDatos,PASSWORD_DEFAULT);
 
         if ( password_verify($_POST["contrasena"],$contrasenaUsuarioBaseDatos) ){
 
@@ -20,16 +18,16 @@ if (isset($_POST["botonEnviarLogin"])){
 
         } else {
 
-            echo("mal");
+            $error = "errorCredenciales";
+            header("Location: ../Controlador/login.php?error=$error");
 
         }
 
     } else{
 
-        echo("credenciales incorrectas");
+        $error = "errorCredenciales";
+        header("Location: ../Controlador/login.php?error=$error");
         
-        /*como informo del error ?*/
-
     }
 
 } else {
