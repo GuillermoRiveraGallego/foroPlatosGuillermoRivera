@@ -5,7 +5,7 @@
             <img class="imgFotoPerfil" src="../Imagenes/<?php echo $PerfilUsuario[0]['foto_perfil']; ?>" alt="Foto de perfil">
 
             <div class="nombreUsuario">
-                <?php echo htmlspecialchars($PerfilUsuario[0]['nombre_usuario']); ?>
+                <?php echo ($PerfilUsuario[0]['nombre_usuario']); ?>
             </div>
 
             <p><strong>Nombre:</strong> <?php echo ($PerfilUsuario[0]['nombre']); ?></p>

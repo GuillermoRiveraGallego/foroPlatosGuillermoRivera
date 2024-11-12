@@ -58,5 +58,28 @@
 
         }
 
+        function saberIdNombreUsuario($nombreUsuario) {
+            $pdo = conexionBaseDatos();
+            $resultado = $pdo->query("SELECT id FROM Usuario WHERE nombre_usuario = '$nombreUsuario'")->fetch(PDO::FETCH_ASSOC);
+        
+            return $resultado ? $resultado['id'] : null;
+        }
+        
+
+        function cambiarDatosUsuario ($id,$nuevaFotoPerfil){
+
+            $pdo = conexionBaseDatos();
+
+            $nuevoNombreUsuario = $_POST["nuevoNombreUsuario"];
+            $nuevoNombre = $_POST["nuevoNombreDelUsuario"];
+            $nuevosApellidos = $_POST["nuevoApellidosUsuario"];
+            $nuevoCorreo = $_POST["nuevoCorreoUsuario"];
+
+            $sql = "UPDATE Usuario SET nombre_usuario = '$nuevoNombreUsuario', nombre = '$nuevoNombre', apellidos = '$nuevosApellidos', foto_perfil = '$nuevaFotoPerfil', correo = '$nuevoCorreo' WHERE id = '$id'";
+
+		    $pdo->prepare($sql)->execute();
+
+        }
+
 
 ?>

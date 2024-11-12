@@ -1,6 +1,6 @@
 <div class="contenedorPerfilGrande">
     <div class="contenedorPerfil">
-       <form action="../Controlador/guardarCambiosPerfil.php" method="post" enctype="multipart/form-data">
+       <form action="../Controlador/cambiarDatosPerfil.php" method="post" enctype="multipart/form-data">
             <div class="contenedorImagen">
                 <img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
                 <input type="file" name="fotoPerfil" accept=".jpg, .png, .jpeg" class="inputFotoPerfil">
@@ -9,22 +9,22 @@
             <div class="contenedorDatos">
                 <div class="linea">
                     <p>Nombre Usuario:</p>
-                    <input name="nuevoNombreUsuario" type="text" value="<?php echo($PerfilUsuario[0]['nombre_usuario']);?>">
+                    <input required name="nuevoNombreUsuario" type="text" value="<?php echo($PerfilUsuario[0]['nombre_usuario']);?>">
                 </div>
 
                 <div class="linea">
                     <p>Nombre:</p>
-                    <input name="nuevoNombreDelUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['nombre']);?>">
+                    <input required name="nuevoNombreDelUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['nombre']);?>">
                 </div>
                 
                 <div class="linea">
                     <p>Apellidos:</p>
-                    <input name="nuevoApellidosUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['apellidos']); ?>">
+                    <input required name="nuevoApellidosUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['apellidos']); ?>">
                 </div>
                 
                 <div class="linea">
                     <p>Correo:</p>
-                    <input name="nuevoCorreoUsuario" type="email" value="<?php echo ($PerfilUsuario[0]['correo']);  ?>">
+                    <input required name="nuevoCorreoUsuario" type="email" value="<?php echo ($PerfilUsuario[0]['correo']);  ?>">
                 </div>
             </div>
         
@@ -37,7 +37,7 @@
     </div>
 
     <div class="editarPerfil">
-        <input type="submit" guardar cambios>
+    <input type="submit" value="Guardar cambios">
     </div>
 </div>
 </form>
