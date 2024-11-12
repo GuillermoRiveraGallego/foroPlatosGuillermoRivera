@@ -1,53 +1,56 @@
 <?php
 
-echo("<div class='contenedorDeRecetas'>");
-
+echo "<div class='cuerpoRecetas'>";
 foreach($recetas as $receta){
-    $id=$receta['id'];
-    echo "<a href='../Controlador/unaReceta.php?idReceta=$id'><img height=80px src={$receta['foto_receta']}></a><br>{$receta['nombre_receta']}<br>";
+   
+    $id = $receta['id'];
+    $nombre_receta = $receta['nombre_receta'];
+    $foto_receta = $receta['foto_receta'];
+    $tipo = $receta['tipo'];
+    $dificultad = $receta['dificultad'];
+    $valoracion_media = $receta['valoracion_media'];
+    $fecha_creacion = $receta['fecha_creacion'];
+    $fecha_actualizacion = $receta['fecha_actualizacion'];
+    $usuario = $receta['id_usuario']; // Asumiendo que tienes el nombre del usuario asociado con 'id_usuario'
+
+    echo "<div class='contenedorDeRecetas'>
+            <a href='../Controlador/unaReceta.php?idReceta=$id'><img class='fotoReceta' src='$foto_receta' alt='Foto de la receta'></a>
+            <div class='informacionReceta'>
+                <div class='nombreReceta'>$nombre_receta</div>
+                <div class='tipoDeReceta'>$tipo</div>
+                <div class='dificultad'>$dificultad</div>
+                <div class='valoracionMedia'>Valoración Media: $valoracion_media</div>
+                <div class='fechaDeReceta'>Fecha de Creación: $fecha_creacion</div>
+                <div class='fechaDeModificacion'>Fecha de Modificación: $fecha_actualizacion</div>
+                <div class='usuarioReceta'>Autor: $usuario</div>
+            </div>
+          </div>";
 }
-if($numPagina!=0){
-    echo "<div class='boton'> <br><a href='index.php?numPagina=".($numPagina-1)."'> Anterior </a></div>";
-}
-if($numPagina!=$maxPagina){
-    echo"<div class='boton'> <br><a href='index.php?numPagina=".($numPagina+1)."'> Siguiente </a></div>";
+echo "</div>"; // Mover este cierre fuera del foreach
+
+// Contenedor de botones de paginación
+echo "<div class='contenedorDeBotones'>";
+        
+if($numPagina != 0){
+    echo "<div class='boton'><a href='index.php?numPagina=".($numPagina-1)."'> Anterior </a></div>";
 }
 
-echo("</div>");
+if($numPagina != $maxPagina){
+    echo "<div class='boton'><a href='index.php?numPagina=".($numPagina+1)."'> Siguiente </a></div>";
+}
+echo "</div>";
 
 ?>
 
 
-<div class="contenedorDeRecetas">
-
-    
-
-    <a href="../Controlador/unaReceta.php?idReceta=1"><img class="fotoReceta" src="../Imagenes/default.jpg" alt="Foto de la receta">  </a>
-
-    <div class="informacionReceta">
-
-        <div class="nombreReceta">Paella Valenciana</div>
-        <div class="tipoDeReceta">Receta Tradicional</div>
-        <div class="dificultad">Dificil</div>
-        <div class="valoracionMedia">Valoración Media: 5.5</div>
-        <div class="fechaDeReceta">Fecha de Creación: 15/11/1999</div>
-        <div class="fechaDeModificacion">Fecha de Modificación: 15/11/1999</div>
-        <div class="usuarioReceta">Realizada por Guillermo</div>
-
-    </div>
-</div>
-
-<div class="contenedorDeBotones">
-
-    <div class="boton"> <a href="">anterior</a> </div>
-    <div class="boton"> <a href="">siguiente</a> </div>
-
-</div>
-
-
-
-
 <style>
+
+    .cuerpoRecetas{
+
+        margin-top: 95px;
+        
+
+    }
 
 .contenedorDeRecetas {
     display: flex;
@@ -61,6 +64,8 @@ echo("</div>");
     max-width: 800px;
     margin: 20px auto;
     color: #ffffff;
+    
+
 }
 
 .fotoReceta {
@@ -68,8 +73,16 @@ echo("</div>");
     height: 200px;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
+.fotoReceta:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
+}
+
+
 
 .informacionReceta {
     display: flex;
@@ -137,7 +150,9 @@ echo("</div>");
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 20px auto;
+
+    margin-bottom: 90px;
+
 }
 
 .boton {

@@ -11,7 +11,8 @@
 <body>
 <div class="header-container">
         <header class="header">
-            <h1>Foroplatos</h1>
+            
+        <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
 
             <form action="" method="post">
 

@@ -4,7 +4,7 @@
 
     function selectNombreUsuario($nombreUsuario){
       
-        $pdo = conexionBaseDatos();
+            $pdo = conexionBaseDatos();
 		    $resultado=$pdo->query("SELECT nombre_usuario FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
 		    $nombre = $resultado->fetch(PDO::FETCH_ASSOC);
 
@@ -47,7 +47,16 @@
         $sql = "INSERT INTO Usuario (nombre_usuario,nombre,apellidos,contrasena,es_admin,correo,experiencia_usuario,foto_perfil,fecha_creacion) values ('$nombreUsuario','$nombre', '$apellidos' ,'$contrasena','$esAdmin','$correo','$experienciaUsuario','$fotoPerfil','$fechaCreacion')";
 		    $pdo->prepare($sql)->execute();
 
-	}
+	    }
+
+        function datosUsuario($nombreUsuario){
+
+            $pdo = conexionBaseDatos();
+		    $resultado=$pdo->query("SELECT * FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ")->fetchAll(PDO::FETCH_ASSOC);
+
+            return $resultado;
+
+        }
 
 
 ?>

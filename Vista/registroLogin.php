@@ -56,7 +56,7 @@
       <button type="submit" name="enviar">Registrarme</button>
 
       <div class="register">
-        <p><a href="../Vista/login.html">Volver a login</a></p>
+        <p><a href="../Controlador/login.php">Volver a login</a></p>
       </div>
       
     </form>

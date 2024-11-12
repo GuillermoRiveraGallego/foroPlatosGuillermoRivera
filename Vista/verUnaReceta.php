@@ -16,12 +16,12 @@
         font-family: Arial, sans-serif;
         background-color: #333;
         color: white; /* Color de texto en blanco */
-        margin-top: 95px;
+        margin-top: 125px;
         margin-bottom: 95px;
     }
 
     .contenedorReceta img {
-      width: 200px;
+      width: 300px;
       height: auto;
       margin: 0 auto 20px auto;
       border-radius: 8px;

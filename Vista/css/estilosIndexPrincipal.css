@@ -1,4 +1,4 @@
-/* Estilos para el fondo */
+
 body {
     background-image: url('../../Imagenes/BGIMAGE3.jpg');
     background-size: cover;
@@ -10,6 +10,13 @@ body {
     display: flex;
     flex-direction: column; /* Colocar header, content y footer en columna */
     min-height: 100vh; /* Asegurar que el body ocupe al menos el 100% de la altura */
+}
+
+.logoHeader{
+
+    width: 200px;
+    margin-bottom: 10px;
+ 
 }
 
 /* Contenedor del header */
@@ -29,7 +36,7 @@ body {
     width: 90%;
     margin-top: 15px;
     height: 60px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 1);
     border: solid white 1px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -40,6 +47,7 @@ body {
     color: white;
     font-size: 18px;
     font-weight: bold;
+    
 }
 
 header a{
@@ -48,6 +56,7 @@ header a{
     color: white;
 
 }
+
 
 /* Estilos del contenido */
 .content {

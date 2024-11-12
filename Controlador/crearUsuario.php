@@ -22,14 +22,16 @@ if(isset($_POST['enviar'])){
                 move_uploaded_file($_FILES['fotoPerfil']['tmp_name'],"../Imagenes/".$nombreImagen);
                 insertarUsuario($nombreImagen);
                 $_SESSION["login"]=true;
+                $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
                 $_SESSION["tiempoInicioSesion"]=time();
                 header("Location: ../Controlador/index.php");		
         
                 } else {
         
-                    $nombreImagen = $_POST["nombreUsuario"]."_"."default.jpg";
+                    $nombreImagen = "default.jpg";
                     insertarUsuario($nombreImagen);	
                     $_SESSION["login"]=true;
+                    $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
                     $_SESSION["tiempoInicioSesion"]=time();
                     header("Location: ../Controlador/index.php");
         

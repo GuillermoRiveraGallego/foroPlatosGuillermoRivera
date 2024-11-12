@@ -14,12 +14,22 @@
             
         <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
 
-            <form action="" method="post">
+        <div class="l">
 
-                <input type="text" placeholder="buscarReceta">
+        <a class="homePerfil" href="../Controlador/index.php">Home</a>
+        &#128100; TU PERFIL &#128100;
+        
+        </div>
 
-            </form>
-
-            <a href="../Controlador/verPerfil.php">VER PERFIL</a> 
         </header>
 </div>
+
+<style>
+
+.homePerfil{
+
+    margin-right: 20px;
+
+}
+
+</style>

@@ -16,7 +16,6 @@
 
     }
 
-
     function verUnaReceta (){
 
         $pdo = conexionBaseDatos();

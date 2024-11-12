@@ -14,6 +14,7 @@ if (isset($_POST["botonEnviarLogin"])){
 
             $_SESSION["login"]=true;
             $_SESSION["tiempoInicioSesion"]=time();
+            $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
             header("Location: ../Controlador/index.php");
 
         } else {
