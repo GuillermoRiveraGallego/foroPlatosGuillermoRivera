@@ -8,11 +8,11 @@
                 <?php echo htmlspecialchars($PerfilUsuario[0]['nombre_usuario']); ?>
             </div>
 
-            <p><strong>Nombre:</strong> <?php echo htmlspecialchars($PerfilUsuario[0]['nombre']); ?></p>
-            <p><strong>Apellidos:</strong> <?php echo htmlspecialchars($PerfilUsuario[0]['apellidos']); ?></p>
-            <p><strong>Correo:</strong> <?php echo htmlspecialchars($PerfilUsuario[0]['correo']); ?></p>
-            <p><strong>Experiencia:</strong> <?php echo htmlspecialchars($PerfilUsuario[0]['experiencia_usuario']); ?></p>
-            <p><strong>Fecha de creación:</strong> <?php echo htmlspecialchars($PerfilUsuario[0]['fecha_creacion']); ?></p>
+            <p><strong>Nombre:</strong> <?php echo ($PerfilUsuario[0]['nombre']); ?></p>
+            <p><strong>Apellidos:</strong> <?php echo ($PerfilUsuario[0]['apellidos']); ?></p>
+            <p><strong>Correo:</strong> <?php echo ($PerfilUsuario[0]['correo']); ?></p>
+            <p><strong>Experiencia:</strong> <?php echo ($PerfilUsuario[0]['experiencia_usuario']); ?></p>
+            <p><strong>Fecha de creación:</strong> <?php echo ($PerfilUsuario[0]['fecha_creacion']); ?></p>
 
     </div>
 
@@ -25,52 +25,82 @@
     </div>
 
     <div class="editarPerfil">
-        <a href="">editarPerfi</a>
+        <a href="../Controlador/editarPerfil.php">editarPerfil</a>
     </div>
 
 </div>
 <style>
-
-.botones{
-    width: 100%;
-    margin-bottom: 150px;
-    align-items: center;
-    justify-content: center;
-    
-}
-
+/* Contenedor principal */
 .contenedorPerfilGrande {
     margin-top: 150px;
     display: flex;
+    flex-direction: column; 
     width: 100%;
     align-items: center;
     justify-content: center;
-
 }
 
+/* Estilos del perfil */
 .contenedorPerfil {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: white;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro semitransparente */
-    backdrop-filter: blur(10px); /* Ajusta el nivel de desenfoque */
-    border-radius: 15px; /* Opcional: bordes redondeados */
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    margin-bottom: 20px; 
+    font-size: 26px;
 }
 
-.imgFotoPerfil{
-
-    width: 300px;
-    height: 300px;
-
+.imgFotoPerfil {
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 15px; 
 }
 
 .nombreUsuario {
-    margin-top: 10px;
-    font-size: 20px;
+    font-size: 28px; /* Tamaño de fuente reducido */
+    font-weight: bold;
     color: white;
+    margin-bottom: 10px; /* Espacio reducido debajo del nombre de usuario */
 }
 
+.contenedorPerfil p {
+    margin: 5px 0; /* Espacio reducido entre los elementos <p> */
+}
+
+/* Contenedor de botones */
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+/* Estilos de los botones */
+.cerrarSesion a, .editarPerfil a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    font-weight: bold;
+    background-color: #007BFF;
+    padding: 8px 16px; 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cerrarSesion a:hover, .editarPerfil a:hover {
+    background-color: #0056b3;
+}
+
+
 </style>
+
+
