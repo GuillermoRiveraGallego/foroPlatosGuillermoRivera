@@ -11,12 +11,10 @@ foreach($recetas as $receta){
     $valoracion_media = $receta['valoracion_media'];
     $fecha_creacion = $receta['fecha_creacion'];
     $fecha_actualizacion = $receta['fecha_actualizacion'];
-    $usuario = "Solo para usuarios registrados"; 
-
-    
+    $nombreDelUsuario = $receta['nombreDelUsuario'];
 
     echo "<div class='contenedorDeRecetas'>
-            <a href='../Controlador/unaReceta.php?idReceta=$id'><img class='fotoReceta' src='$foto_receta' alt='Foto de la receta'></a>
+            <a href='../Controlador/unaRecetaLogeado.php?idReceta=$id'><img class='fotoReceta' src='$foto_receta' alt='Foto de la receta'></a>
             <div class='informacionReceta'>
                 <div class='nombreReceta'>$nombre_receta</div>
                 <div class='tipoDeReceta'>$tipo</div>
@@ -24,10 +22,11 @@ foreach($recetas as $receta){
                 <div class='valoracionMedia'>Valoración Media: $valoracion_media</div>
                 <div class='fechaDeReceta'>Fecha de Creación: $fecha_creacion</div>
                 <div class='fechaDeModificacion'>Fecha de Modificación: $fecha_actualizacion</div>
-                <div class='usuarioReceta'>Autor: $usuario</div>
+                 <div class='usuarioReceta'>Autor: " . $nombreDelUsuario . "</div>
             </div>
           </div>";
-}
+    }
+
 echo "</div>"; 
 
 echo "<div class='contenedorDeBotones'>";

@@ -17,7 +17,9 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
 
     } else {
        
-        $nuevaFotoPerfil = "default.jpg";
+   
+        $nuevaFotoPerfil = fotoDePerfilPorId($idDelUsuario)["foto_perfil"];
+
     }
 
     $_SESSION["nombreUsuario"] = $_POST["nuevoNombreUsuario"];
@@ -30,5 +32,6 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
 } else {
     
     echo("El nombre de usuario ya existe. Por favor, elige otro.");
+    /*GET*/
 }
-?>
+

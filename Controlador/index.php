@@ -6,6 +6,8 @@
 
         include("../Vista/headerLogueado.php");
 
+        include("mostrarRecetasSiLogueados.php");
+
         include("../Vista/footer.php");
 
 
@@ -16,8 +18,6 @@
         include("mostrarRecetasNoLogueados.php");
 
         include("../Vista/footer.php");
-
-        
 
     }
 

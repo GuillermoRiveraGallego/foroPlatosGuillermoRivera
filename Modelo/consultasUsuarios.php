@@ -1,6 +1,6 @@
 <?php
     
-    include("conexionBD.php");
+    include_once("conexionBD.php");
 
     function selectNombreUsuario($nombreUsuario){
       
@@ -81,5 +81,22 @@
 
         }
 
+        function fotoDePerfilPorId($idDelUsuario){
+
+            $pdo = conexionBaseDatos();
+            $resultado = $pdo->query("SELECT foto_perfil FROM Usuario WHERE id = '$idDelUsuario'")->fetch(PDO::FETCH_ASSOC);
+        
+            return $resultado ? $resultado : false;
+
+        }
+
+        function NombreUsuarioPorId($idDelUsuario){
+
+            $pdo = conexionBaseDatos();
+            $resultado = $pdo->query("SELECT nombre_usuario FROM Usuario WHERE id = '$idDelUsuario'")->fetch(PDO::FETCH_ASSOC);
+        
+            return $resultado ? $resultado : false;
+
+        }
 
 ?>
