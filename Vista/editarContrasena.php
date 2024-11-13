@@ -8,17 +8,17 @@
 <div class="contenedorPerfil">
     <img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
     
-    <form action="" method="post">
+    <form action="../Controlador/gestionControlContrasena.php" method="post">
         <label>Introduce tu contraseña actual:</label>
-        <input type="password" name="contrasenaActual">
+        <input required type="password" name="contrasenaActual">
         
         <label>Introduce la nueva contraseña:</label>
-        <input type="password" name="contrasenaNueva">
+        <input required type="password" name="contrasenaNueva">
         
         <label>Repita la contraseña:</label>
-        <input type="password" name="contrasenaNuevaRepetida">
+        <input required type="password" name="contrasenaNuevaRepetida">
 
-        <input type="submit" value="Cambiar Contraseña" name="enviarContraseña">
+        <input type="submit" value="Cambiar Contraseña" name="enviarContrasena">
     </form>
 </div>
 

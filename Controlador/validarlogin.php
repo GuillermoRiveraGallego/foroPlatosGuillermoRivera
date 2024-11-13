@@ -19,8 +19,7 @@ if (isset($_POST["botonEnviarLogin"])){
 
         } else {
 
-            $error = "errorCredenciales";
-            header("Location: ../Controlador/login.php?error=$error");
+            header("Location: ../Controlador/login.php?error=errorCredenciales");
 
         }
 

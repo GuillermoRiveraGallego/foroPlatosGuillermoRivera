@@ -99,4 +99,14 @@
 
         }
 
+        function cambiarContrasenaUsuario ($nombreUsuarioC,$nuevaContrasena){
+
+            $pdo = conexionBaseDatos();
+
+            $sql = "UPDATE Usuario SET contrasena = '$nuevaContrasena' WHERE nombre_usuario = '$nombreUsuarioC'";
+
+		    $pdo->prepare($sql)->execute();
+
+        }
+
 ?>
