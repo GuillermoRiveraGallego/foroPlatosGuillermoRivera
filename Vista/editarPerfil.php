@@ -36,6 +36,10 @@
         <a href="../Controlador/verPerfil.php">volver a perfil</a>
     </div>
 
+    <div class="cambiacontrasena">
+        <a href="../Controlador/cambiarContrasena.php">CambiarContraseña</a>
+    </div>
+
     <div class="editarPerfil">
     <input type="submit" value="Guardar cambios">
     </div>
@@ -110,16 +114,31 @@
     margin-top: 20px;
 }
 
-.cerrarSesion a, .editarPerfil input[type="submit"] {
+.cerrarSesion a, .cambiacontrasena a , .editarPerfil input[type="submit"] {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
     border: none; 
     cursor: pointer; 
+}
+
+.cambiacontrasena a {
+    background-color: #ff4900; /* Naranja */
+}
+
+.cambiacontrasena a:hover {
+    background-color: #ff0000; /* Rojo */
+}
+
+.cerrarSesion a {
+    background-color: #007BFF;
+}
+
+.cerrarSesion a:hover {
+    background-color: blue;
 }
 
 .cerrarSesion a {

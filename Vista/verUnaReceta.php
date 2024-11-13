@@ -62,8 +62,6 @@
     }
   </style>
 
-
-
 <div class="contenedorReceta">
   <!-- Imagen de la receta centrada -->
   <img src="<?php echo $receta['foto_receta'] ?? '../Imagenes/default.jpg'; ?>" alt="Foto de la receta">
