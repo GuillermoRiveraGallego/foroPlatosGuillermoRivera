@@ -2,7 +2,6 @@
 session_start();
 include("../Modelo/consultasUsuarios.php");
 
-
 if (isset($_POST["enviarContrasena"])){
 
         $nombreDelUsuarioC = $_SESSION["nombreUsuario"];

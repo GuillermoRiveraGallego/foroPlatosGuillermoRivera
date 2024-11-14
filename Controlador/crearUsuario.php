@@ -17,18 +17,20 @@ if(isset($_POST['enviar'])){
 
         if ($_POST["contrasena"] == $_POST["contrasenaRepetida"]){
 
-            if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == UPLOAD_ERR_OK){
+            if (strlen($_POST["contrasena"]) >= 6 ){ 
 
-                $nombreImagen=$_POST["nombreUsuario"]."_".$_FILES['fotoPerfil']['name'];
-                move_uploaded_file($_FILES['fotoPerfil']['tmp_name'],"../Imagenes/".$nombreImagen);
-                insertarUsuario($nombreImagen);
-                $_SESSION["login"]=true;
-                $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
-                $_SESSION["tiempoInicioSesion"]=time();
-                header("Location: ../Controlador/index.php");		
-        
+                if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == UPLOAD_ERR_OK){
+
+                    $nombreImagen=$_POST["nombreUsuario"]."_".$_FILES['fotoPerfil']['name'];
+                    move_uploaded_file($_FILES['fotoPerfil']['tmp_name'],"../Imagenes/".$nombreImagen);
+                    insertarUsuario($nombreImagen);
+                    $_SESSION["login"]=true;
+                    $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
+                    $_SESSION["tiempoInicioSesion"]=time();
+                    header("Location: ../Controlador/index.php");		
+                
                 } else {
-        
+                
                     $nombreImagen = "default.jpg";
                     insertarUsuario($nombreImagen);	
                     $_SESSION["login"]=true;
@@ -36,8 +38,14 @@ if(isset($_POST['enviar'])){
                     $_SESSION["tiempoInicioSesion"]=time();
                     header("Location: ../Controlador/index.php");
                     exit;
-        
+                
                 }
+
+            } else {
+
+                header("Location: ../Controlador/registro.php?error=caracteresContrasenas");
+            
+            }
 
         } else {
 
@@ -49,7 +57,8 @@ if(isset($_POST['enviar'])){
     }
 
 } else{
-    echo("has entrado sin darle a enviar");
+
+    http_response_code(404);
 }
 
 ?>

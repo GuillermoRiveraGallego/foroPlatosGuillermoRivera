@@ -1,4 +1,64 @@
-  <style>
+
+<div class="contenedorReceta">
+  <!-- Imagen de la receta centrada -->
+  <img src="<?php echo $receta['foto_receta'] ?? '../Imagenes/default.jpg'; ?>" alt="Foto de la receta">
+  
+  <!-- Nombre de la receta centrado -->
+  <h2><?php echo $receta['nombre_receta'] ?? 'Nombre de la receta'; ?></h2>
+
+  <div class="campo">
+    <span class="nombreCampo">Realizada por:</span>
+    <span class="valorCampo"><?php echo $receta['nombreDelUsuario']?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Tipo:</span>
+    <span class="valorCampo"><?php echo $receta['tipo'] ?? 'No disponible'; ?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Valoración Media:</span>
+    <span class="valorCampo"><?php echo $receta['valoracion_media'] ?? 'No disponible'; ?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Dificultad:</span>
+    <span class="valorCampo"><?php echo $receta['dificultad'] ?? 'No disponible'; ?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Fecha de Creación:</span>
+    <span class="valorCampo"><?php echo $receta['fecha_creacion'] ?? 'No disponible'; ?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Fecha de Actualización:</span>
+    <span class="valorCampo"><?php echo $receta['fecha_actualizacion'] ?? 'No disponible'; ?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Lista de ingredientes:</span>
+    <span class="valorCampo">
+      <?php 
+
+          foreach ($listaIngredientes as $ingrediente){
+
+            echo($ingrediente."<br>");
+
+          }
+
+     ?></span>
+  </div>
+
+  <!-- Descripción de la receta -->
+  <p class="descripcion"><?php echo $receta['descripcion'] ?? 'No disponible'; ?></p>
+
+  <!-- Área de comentarios -->
+  <div class="campo">
+    <span class="valorCampoComentario">
+      <form action="" method="post">
+        <textarea name="comentarios" rows="5" placeholder="Escribe tu comentario aquí..."></textarea>
+      </form>
+    </span>
+  </div>
+
+</div>
+
+<style>
     /* Estilos para el contenedor de la receta */
     .contenedorReceta {
         width: 500px;
@@ -88,54 +148,3 @@
     }
 
   </style>
-
-<div class="contenedorReceta">
-  <!-- Imagen de la receta centrada -->
-  <img src="<?php echo $receta['foto_receta'] ?? '../Imagenes/default.jpg'; ?>" alt="Foto de la receta">
-  
-  <!-- Nombre de la receta centrado -->
-  <h2><?php echo $receta['nombre_receta'] ?? 'Nombre de la receta'; ?></h2>
-
-  <div class="campo">
-    <span class="nombreCampo">Realizada por:</span>
-    <span class="valorCampo"><?php echo $receta['nombreDelUsuario']?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Tipo:</span>
-    <span class="valorCampo"><?php echo $receta['tipo'] ?? 'No disponible'; ?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Valoración Media:</span>
-    <span class="valorCampo"><?php echo $receta['valoracion_media'] ?? 'No disponible'; ?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Dificultad:</span>
-    <span class="valorCampo"><?php echo $receta['dificultad'] ?? 'No disponible'; ?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Fecha de Creación:</span>
-    <span class="valorCampo"><?php echo $receta['fecha_creacion'] ?? 'No disponible'; ?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Fecha de Actualización:</span>
-    <span class="valorCampo"><?php echo $receta['fecha_actualizacion'] ?? 'No disponible'; ?></span>
-  </div>
-  <div class="campo">
-    <span class="nombreCampo">Lista de ingredientes:</span>
-    <span class="valorCampo">PENDIENTE DE HACER LA LISTA</span>
-  </div>
-
-  <!-- Descripción de la receta -->
-  <p class="descripcion"><?php echo $receta['descripcion'] ?? 'No disponible'; ?></p>
-
-  <!-- Área de comentarios -->
-  <div class="campo">
-    <span class="valorCampoComentario">
-      <form action="" method="post">
-        <textarea name="comentarios" rows="5" placeholder="Escribe tu comentario aquí..."></textarea>
-      </form>
-    </span>
-  </div>
-
-</div>
-
