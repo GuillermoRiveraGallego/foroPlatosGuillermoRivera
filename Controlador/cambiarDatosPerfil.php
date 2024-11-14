@@ -31,7 +31,7 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
 
 } else {
     
-    echo("El nombre de usuario ya existe. Por favor, elige otro.");
-    /*GET*/
+    header("Location: ../Controlador/editarPerfil.php?error=errorDeNombreUsuario");
+
 }
 

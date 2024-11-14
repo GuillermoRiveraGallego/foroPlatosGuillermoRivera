@@ -8,6 +8,11 @@
                 <?php echo ($PerfilUsuario[0]['nombre_usuario']); ?>
             </div>
 
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "contrasenaCambiada") {
+                     echo "<div class='lineaError'><p class='errorUser'> Contraseña Cambiada </p></div>";
+            } ?>
+
             <p><strong>Nombre:</strong> <?php echo ($PerfilUsuario[0]['nombre']); ?></p>
             <p><strong>Apellidos:</strong> <?php echo ($PerfilUsuario[0]['apellidos']); ?></p>
             <p><strong>Correo:</strong> <?php echo ($PerfilUsuario[0]['correo']); ?></p>
@@ -98,6 +103,22 @@
 
 .cerrarSesion a:hover, .editarPerfil a:hover {
     background-color: #0056b3;
+}
+
+.lineaError{
+
+width: 60%;
+text-align: center;
+
+}
+
+.errorUser{
+
+    background-color: green;
+    color: black;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
 }
 
 

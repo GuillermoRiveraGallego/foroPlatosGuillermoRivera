@@ -1,12 +1,24 @@
-<?php
 
-
-
-
-?>
 
 <div class="contenedorPerfil">
-    <img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
+    
+<img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
+
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "contraseñaIncorrrectaCambio") {
+                     echo "<div class='lineaError'><p class='errorUser'> Contraseña incorrecta </p></div>";
+            } ?>
+
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "contraseñaDiferenteCambio") {
+                     echo "  <div class='lineaError'><p class='errorUser'> Las contraseñas no son iguales </p></div>";
+            } ?>
+
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "contraseñaCaracteresCambio") {
+                     echo "<div class='lineaError'><p class='errorUser'> La contraseña debe tener 6 o mas caracteres </p></div>";
+            } ?>
+
     
     <form action="../Controlador/gestionControlContrasena.php" method="post">
         <label>Introduce tu contraseña actual:</label>
@@ -38,6 +50,22 @@
     max-width: 800px;
     margin: 150px auto 20px auto;
     color: #ffffff;
+}
+
+.lineaError{
+
+width: 80%;
+text-align: center;
+
+}
+
+.errorUser{
+
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    padding: 5px;
+
 }
 
 .imgFotoPerfil {

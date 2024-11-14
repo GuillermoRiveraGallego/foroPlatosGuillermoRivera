@@ -5,6 +5,10 @@
                 <img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
                 <input type="file" name="fotoPerfil" accept=".jpg, .png, .jpeg" class="inputFotoPerfil">
             </div>
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "errorDeNombreUsuario") {
+                     echo "<div class='lineaError'><p class='errorUser'>Nombre de usuario no disponible </p></div>";
+            } ?>
 
             <div class="contenedorDatos">
                 <div class="linea">
@@ -47,9 +51,25 @@
 </form>
 
 <style>
+
+.lineaError{
+
+width: 100%;
+text-align: center;
+
+}
+
+.errorUser{
+
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+
+}
+
 /* Contenedor principal */
 .contenedorPerfilGrande {
-    margin-top: 120px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -96,6 +116,9 @@
     flex-direction: column;
     font-size: 24px;
 }
+
+
+
 
 .nombreUsuario {
     font-size: 26px;

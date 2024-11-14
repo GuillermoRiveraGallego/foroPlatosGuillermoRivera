@@ -98,7 +98,11 @@
 
   <div class="campo">
     <span class="nombreCampo">Realizada por:</span>
-    <span class="valorCampo"><?php echo $receta['id_usuario'] ?? 'No disponible'; ?></span>
+    <span class="valorCampo"><?php echo $receta['nombreDelUsuario']?></span>
+  </div>
+  <div class="campo">
+    <span class="nombreCampo">Tipo:</span>
+    <span class="valorCampo"><?php echo $receta['tipo'] ?? 'No disponible'; ?></span>
   </div>
   <div class="campo">
     <span class="nombreCampo">Valoración Media:</span>
@@ -116,16 +120,6 @@
     <span class="nombreCampo">Fecha de Actualización:</span>
     <span class="valorCampo"><?php echo $receta['fecha_actualizacion'] ?? 'No disponible'; ?></span>
   </div>
-  <div class="campo">
-    <span class="nombreCampo">Tipo:</span>
-    <span class="valorCampo"><?php echo $receta['tipo'] ?? 'No disponible'; ?></span>
-  </div>
-
-  <div class="campo">
-    <span class="nombreCampo">Usuario</span>
-    <span class="valorCampo"><?php echo $receta['nombreDelUsuario']?> </span>
-  </div>
-
   <div class="campo">
     <span class="nombreCampo">Lista de ingredientes:</span>
     <span class="valorCampo">PENDIENTE DE HACER LA LISTA</span>

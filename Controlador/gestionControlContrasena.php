@@ -19,36 +19,31 @@ if (isset($_POST["enviarContrasena"])){
 
                     $contrasenaNuevaHash = password_hash($contrasenaNueva,PASSWORD_DEFAULT);
                     cambiarContrasenaUsuario ($nombreDelUsuarioC ,$contrasenaNuevaHash);
-                    header("Location: ../Controlador/verPerfil.php");
-                    /*Mensaje con GET de que has cambiado contraseña*/ 
+                    header("Location: ../Controlador/verPerfil.php?error=contrasenaCambiada");
 
 
                 } else {
 
-                    echo("no tiene la longuitud necesaria (6)");
-                    /*GET*/
+                    header("Location: ../Controlador/cambiarContrasena.php?error=contraseñaCaracteresCambio");
 
                 }
 
             } else {
             
-                echo("no son iguales las contraseñas");
-                /*GET*/
+                header("Location: ../Controlador/cambiarContrasena.php?error=contraseñaDiferenteCambio");
             
             }
 
 
         } else {
 
-            echo("la contraseña no es correcta");
-            /*GET*/
+            header("Location: ../Controlador/cambiarContrasena.php?error=contraseñaIncorrrectaCambio");
 
         }
 
 }
 
 
-?>
 
 
 
