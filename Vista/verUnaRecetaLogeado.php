@@ -33,15 +33,13 @@
   <div class="campo">
     <span class="nombreCampo">Lista de ingredientes:</span>
     <span class="valorCampo">
-      <?php 
+    <?php 
+        foreach ($listaIngredientes as $ingrediente) {
+            echo $ingrediente['nombreIngrediente'].": ".$ingrediente['cantidad']." ".$ingrediente['medida']. "<br>";
+        }
+    ?>
+</span>
 
-          foreach ($listaIngredientes as $ingrediente){
-
-            echo($ingrediente."<br>");
-
-          }
-
-     ?></span>
   </div>
 
   <!-- Descripción de la receta -->
