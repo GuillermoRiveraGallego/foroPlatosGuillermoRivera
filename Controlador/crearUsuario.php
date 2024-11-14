@@ -9,7 +9,8 @@ if(isset($_POST['enviar'])){
 
     if ($nombreUsuarioBaseDatos){
 
-        echo("ya existe usuario");
+        header("Location: ../Controlador/registro.php?error=nombreUsuarioInvalido");
+        exit;
 
     } else {
 
@@ -34,21 +35,24 @@ if(isset($_POST['enviar'])){
                     $_SESSION["nombreUsuario"] = $_POST["nombreUsuario"];
                     $_SESSION["tiempoInicioSesion"]=time();
                     header("Location: ../Controlador/index.php");
+                    exit;
         
                 }
 
         } else {
 
-            echo("no son iguales las contraseñas");
+            header("Location: ../Controlador/registro.php?error=contrasenasDiferentes");
+            exit;
 
         }
 
     }
 
-}
-
-else{
-    header("Location: ../Vista/registroLogin.html");
+} else{
+    echo("has entrado sin darle a enviar");
 }
 
 ?>
+
+
+
