@@ -1,14 +1,15 @@
 <div class="contenedorPerfilGrande">
     <div class="contenedorPerfil">
-       <form action="../Controlador/cambiarDatosPerfil.php" method="post" enctype="multipart/form-data">
+        <form action="../Controlador/cambiarDatosPerfil.php" method="post" enctype="multipart/form-data">
             <div class="contenedorImagen">
                 <img class="imgFotoPerfil" src="../Imagenes/<?php echo ($PerfilUsuario[0]['foto_perfil']); ?>" alt="Foto de perfil">
                 <input type="file" name="fotoPerfil" accept=".jpg, .png, .jpeg" class="inputFotoPerfil">
             </div>
             <?php
             if (isset($_GET['error']) && $_GET['error'] == "errorDeNombreUsuario") {
-                     echo "<div class='lineaError'><p class='errorUser'>Nombre de usuario no disponible </p></div>";
-            } ?>
+                echo "<div class='lineaError'><p class='errorUser'>Nombre de usuario no disponible </p></div>";
+            }
+            ?>
 
             <div class="contenedorDatos">
                 <div class="linea">
@@ -31,7 +32,12 @@
                     <input required name="nuevoCorreoUsuario" type="email" value="<?php echo ($PerfilUsuario[0]['correo']);  ?>">
                 </div>
             </div>
-            </form>
+
+            <!-- Mover el botón de guardar dentro del formulario -->
+            <div class="editarPerfil">
+                <input type="submit" value="Guardar cambios">
+            </div>
+        </form>
     </div>
 </div>
 
@@ -44,17 +50,13 @@
         <form action="../Controlador/eliminarCuenta.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.');">
             <button type="submit" name="eliminar" >Eliminar Cuenta</button>
         </form>
-        </div>
+    </div>
 
     <div class="cambiacontrasena">
-        <a href="../Controlador/cambiarContrasena.php">CambiarContraseña</a>
-    </div>
-
-    <div class="editarPerfil">
-    <input type="submit" value="Guardar cambios">
+        <a href="../Controlador/cambiarContrasena.php">Cambiar Contraseña</a>
     </div>
 </div>
-</form>
+
 
 <style>
 

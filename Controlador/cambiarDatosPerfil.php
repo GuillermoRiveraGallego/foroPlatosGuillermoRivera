@@ -6,7 +6,6 @@ include("../Modelo/consultasUsuarios.php");
 $nombreUsuario = $_SESSION["nombreUsuario"];
 $idDelUsuario = saberIdNombreUsuario($nombreUsuario);
 
-
 if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsuario"] === $nombreUsuario) {
  
     if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == UPLOAD_ERR_OK) {

@@ -21,7 +21,7 @@ foreach ($idsIngredientes as $ingrediente) {
 
 }
 
-include("../Vista/headerLogueado.php");
+include("../Vista/headerLogueadoHome.php");
 include("../Vista/verUnaRecetaLogeado.php");
 include("../Vista/footer.php");
 
