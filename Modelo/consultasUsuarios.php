@@ -5,7 +5,7 @@
     function selectNombreUsuario($nombreUsuario){
       
             $pdo = conexionBaseDatos();
-		    $resultado=$pdo->query("SELECT nombre_usuario FROM Usuario WHERE nombre_usuario = '$nombreUsuario' ");
+		    $resultado=$pdo->query("SELECT nombre_usuario FROM Usuario WHERE nombre_usuario = '$nombreUsuario'");
 		    $nombre = $resultado->fetch(PDO::FETCH_ASSOC);
 
             if ($nombre){
@@ -108,5 +108,22 @@
 		    $pdo->prepare($sql)->execute();
 
         }
+
+        function esAdmin($nombreUser) {
+
+            $pdo = conexionBaseDatos();
+            $resultado = $pdo->query("SELECT es_admin FROM Usuario WHERE nombre_usuario = '$nombreUser'")->fetch(PDO::FETCH_ASSOC);
+            
+            if ($resultado && $resultado['es_admin'] == 1) {
+
+                return true;
+
+            } else {
+
+                return false;
+                
+            }
+        }
+        
 
 ?>

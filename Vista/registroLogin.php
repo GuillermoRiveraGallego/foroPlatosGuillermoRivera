@@ -9,8 +9,6 @@
   <link rel="icon" href="../Imagenes/perfil.png" type="image/x-icon">
 </head>
 
-
-
 <body>
 <div class="wrapper">
     <form action="../Controlador/crearUsuario.php" method="post" enctype="multipart/form-data">

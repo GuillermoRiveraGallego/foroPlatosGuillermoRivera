@@ -33,6 +33,7 @@
         <a href="../Controlador/editarPerfil.php">editarPerfil</a>
     </div>
 
+
 </div>
 <style>
 /* Contenedor principal */

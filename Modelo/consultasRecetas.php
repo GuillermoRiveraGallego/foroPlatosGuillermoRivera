@@ -52,6 +52,25 @@
 
         }
     }
+
+
+    function selectRecetasBuscador ($primeraReceta,$tamanioPagina,$nombre_receta) {
+
+        $pdo = conexionBaseDatos();
+        $recetas=$pdo->query("SELECT * FROM Receta where nombre_receta like '%$nombre_receta%' LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $recetas;
+    }
+
+    
+    function selectRecetasBuscadorIngredientes ($primeraReceta,$tamanioPagina,$nombre_ingrediente) {
+
+        $pdo = conexionBaseDatos();
+
+        $recetas=$pdo->query("SELECT Receta.* FROM Receta JOIN Ingrediente_receta ON Receta.id = Ingrediente_receta.id_receta JOIN Ingrediente ON Ingrediente_receta.id_ingrediente = Ingrediente.id WHERE Ingrediente.nombre like '%$nombre_ingrediente%' LIMIT $primeraReceta,$tamanioPagina")->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $recetas;
+    }
     
     
 

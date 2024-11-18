@@ -18,11 +18,11 @@
 
         } else {
 
-            include("../Vista/headerLogueado.php");
+       include("../Vista/headerLogueado.php");
 
-            include("mostrarRecetasSiLogueados.php");
+        include("mostrarRecetasSiLogueados.php");
 
-            include("../Vista/footer.php");
+        include("../Vista/footer.php");
 
         }
 

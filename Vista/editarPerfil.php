@@ -31,7 +31,7 @@
                     <input required name="nuevoCorreoUsuario" type="email" value="<?php echo ($PerfilUsuario[0]['correo']);  ?>">
                 </div>
             </div>
-        
+            </form>
     </div>
 </div>
 
@@ -39,6 +39,12 @@
     <div class="cerrarSesion">
         <a href="../Controlador/verPerfil.php">volver a perfil</a>
     </div>
+
+    <div class="eliminarCuenta">
+        <form action="../Controlador/eliminarCuenta.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.');">
+            <button type="submit" name="eliminar" >Eliminar Cuenta</button>
+        </form>
+        </div>
 
     <div class="cambiacontrasena">
         <a href="../Controlador/cambiarContrasena.php">CambiarContraseña</a>
@@ -51,6 +57,23 @@
 </form>
 
 <style>
+
+.eliminarCuenta button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer; 
+    background-color: red; /* Azul, igual que Volver a perfil */
+}
+
+.eliminarCuenta button:hover {
+    background-color: blue; /* Azul más oscuro al pasar el ratón */
+}
+
 
 .lineaError{
 
@@ -116,9 +139,6 @@ text-align: center;
     flex-direction: column;
     font-size: 24px;
 }
-
-
-
 
 .nombreUsuario {
     font-size: 26px;

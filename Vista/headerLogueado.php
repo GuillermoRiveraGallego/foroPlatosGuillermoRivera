@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="../Vista/css/estilosIndexPrincipal.css">
 </head>
 
+<script>
+    document.getElementById('buscarForm').addEventListener('keydown', function(event) {
+        
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            this.submit();
+        }
+    });
+</script>
+
 <body>
 <div class="header-container">
         <header class="header">
             
         <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
 
-            <form action="" method="post">
-
-                <input type="text" placeholder="buscarReceta">
-
+            <form action="../Controlador/recetasBuscadorLogin.php" method="post" id="buscarForm">
+            
+                <input type="text" name="buscarReceta" placeholder="Buscar receta">
+        
             </form>
 
             <a href="../Controlador/verPerfil.php">VER PERFIL</a> 

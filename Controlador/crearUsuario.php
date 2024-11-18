@@ -14,7 +14,6 @@ if(isset($_POST['enviar'])){
 
     } else {
 
-
         if ($_POST["contrasena"] == $_POST["contrasenaRepetida"]){
 
             if (strlen($_POST["contrasena"]) >= 6 ){ 

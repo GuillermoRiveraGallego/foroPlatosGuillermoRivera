@@ -8,15 +8,26 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Colocar header, content y footer en columna */
-    min-height: 100vh; /* Asegurar que el body ocupe al menos el 100% de la altura */
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
 .logoHeader{
 
     width: 200px;
     margin-bottom: 10px;
- 
+}
+
+
+.botonMenuAdmin{
+
+    padding-right: 50px;
+
+}
+
+a:hover{
+
+    color: red;
 }
 
 /* Contenedor del header */
@@ -66,10 +77,10 @@ header a{
     margin: 120px 400px 50px 400px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    flex: 1; /* Permitir que el contenido ocupe espacio flexible */
+    flex: 1; /*contenido ocupe espacio flexible */
 }
 
-/* Estilos para el campo de búsqueda */
+/* campo de búsqueda */
 .header form input[type="text"] {
     width: 250px;
     height: 35px;

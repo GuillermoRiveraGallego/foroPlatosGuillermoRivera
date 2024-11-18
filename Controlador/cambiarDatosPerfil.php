@@ -8,7 +8,6 @@ $idDelUsuario = saberIdNombreUsuario($nombreUsuario);
 
 
 if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsuario"] === $nombreUsuario) {
-    
  
     if (isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] == UPLOAD_ERR_OK) {
         
@@ -17,7 +16,6 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
 
     } else {
        
-   
         $nuevaFotoPerfil = fotoDePerfilPorId($idDelUsuario)["foto_perfil"];
 
     }
@@ -25,7 +23,6 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
     $_SESSION["nombreUsuario"] = $_POST["nuevoNombreUsuario"];
     cambiarDatosUsuario($idDelUsuario, $nuevaFotoPerfil);
 
-    
     header("Location: ../Controlador/verPerfil.php");
     exit;
 

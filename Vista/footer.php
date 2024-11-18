@@ -1,5 +1,5 @@
 <style>
-/* Estilos del footer */
+
 footer {
     display: flex;
     width: 100%;
@@ -13,7 +13,6 @@ footer {
     z-index: 1000;
 }
 
-/* Estilos de los logos en el footer */
 .logos {
     width: 40px;
     height: 40px;

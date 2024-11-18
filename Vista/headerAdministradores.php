@@ -24,12 +24,19 @@
             
         <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
 
-        <form action="../Controlador/recetasBuscadorNoLogin.php" method="post" id="buscarForm">
+        <form action="../Controlador/recetasBuscadorLoginAdmin.php" method="post" id="buscarForm">
             
             <input type="text" name="buscarReceta" placeholder="Buscar receta">
     
         </form>
 
-            <a href="../Controlador/login.php">INICIAR SESION</a> 
+            <div class="derechaSection">
+            <a class="botonMenuAdmin" href="../Controlador/menuAdministradores.php">MENU ADMINISTRADORES</a>
+            <a href="../Controlador/verPerfil.php">VER PERFIL</a> 
+            </div>
+            
+            
+
         </header>
 </div>
+
