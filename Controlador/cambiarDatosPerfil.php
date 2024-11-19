@@ -30,4 +30,3 @@ if (!selectNombreUsuario($_POST["nuevoNombreUsuario"]) || $_POST["nuevoNombreUsu
     header("Location: ../Controlador/editarPerfil.php?error=errorDeNombreUsuario");
 
 }
-

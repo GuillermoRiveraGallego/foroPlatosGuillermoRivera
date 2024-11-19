@@ -32,7 +32,6 @@ if (isset($idsIngredientes) && !empty($idsIngredientes)){
 
 }
 
-
 /*relleno los comentarios (tengo en cuenta si no existe el que comenta pero no deberia suceder esta situacion)*/
 if (isset($comentarios) && !empty($comentarios)) {
 
@@ -53,7 +52,6 @@ if (isset($comentarios) && !empty($comentarios)) {
         ];
     }
 }
-
 
 include("../Vista/headerLogueadoHome.php");
 include("../Vista/verUnaRecetaLogeado.php");

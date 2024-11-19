@@ -5,7 +5,7 @@ include("../Modelo/consultasComentarios.php");
 
 $nombreUsuarioComenta = $_POST["nombreUsuarioComenta"];
 
-crearComentario ();
+crearComentario();
 
 $rutaVolver = $_POST['redirectUrl'];
 

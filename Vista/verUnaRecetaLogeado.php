@@ -64,7 +64,7 @@
       </div>
 
       <form action="../Controlador/repuestasComentarios.php" method="post" class="formRespuesta">
-            <textarea name="comentarioRespuesta" rows="5" placeholder="Responder..." maxlength="250"></textarea>
+            <textarea required name="comentarioRespuesta" rows="5" placeholder="Responder..." maxlength="250"></textarea>
             <div class="contenedorBotonComentar">
             <input class="enviarComentario" type="submit" value="Comentar" name="Comentar">
             <input type="hidden" name="idUsuarioRespondido" value="<?php echo ($comentarioVista["idUsuarioComenta"]);?>">
@@ -110,26 +110,23 @@
 
 <style>
 
-
+.enviarComentario{
+  margin-bottom: 10PX;
+}
 .contenedorComentarios {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 8px;
-    max-width: 100%; /* Evita que los comentarios excedan el contenedor principal */
-    overflow: hidden; /* Esconde cualquier contenido que se desborde */
+    max-width: 100%; /* Asegura que los comentarios utilicen el ancho completo */
+    padding: 15px;
 }
 
 .comentario {
+    margin-bottom: 20px; /* Añade más espacio entre comentarios */
     padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #555;
+    background-color: #3a3a3a;
     border-radius: 8px;
-    background-color: #333;
-    color: white;
-    overflow: hidden; /* Asegura que nada se salga del contenedor */
-    max-width: 100%; /* Evita que el bloque exceda el ancho del contenedor padre */
+    border: 1px solid #555;
+    color: #eee;
 }
+
 
   .comentarioHeader {
     display: flex;
@@ -173,7 +170,7 @@
         background-color: #333;
         color: white; 
         margin-top: 125px;
-        margin-bottom: 95px;
+        margin-bottom: 205px;
     }
 
     .contenedorReceta img {
@@ -296,5 +293,46 @@
     background-color: #666;
     border-color: #888;
 }
+
+.comentarioTexto {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.4;
+    word-wrap: break-word; /* Rompe palabras largas */
+    overflow-wrap: break-word; /* Asegura el ajuste del texto */
+    max-width: 100%; /* Limita el ancho del texto al contenedor */
+}
+
+.contenedorComentarios {
+    max-width: 100%;
+    padding: 15px;
+    overflow: hidden; /* Evita que el contenido desborde */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+}
+
+.comentario {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #3a3a3a;
+    border-radius: 8px;
+    border: 1px solid #555;
+    color: #eee;
+    overflow-wrap: break-word; /* Ajusta el texto largo */
+    word-wrap: break-word;
+    overflow: hidden; /* Evita que el contenido desborde */
+    max-width: 100%; /* Respeta siempre el tamaño del contenedor padre */
+}
+
+.contenedorReceta {
+    max-width: 500px;
+   
+   
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    overflow: hidden; /* Corta cualquier contenido desbordante */
+}
+
 
   </style>
