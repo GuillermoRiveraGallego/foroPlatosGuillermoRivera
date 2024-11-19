@@ -124,6 +124,18 @@
                 
             }
         }
+
+        function  eliminarUsuario($id){
+
+
+            $pdo = conexionBaseDatos();
+
+            $sql = "DELETE FROM Usuario WHERE id = '$id'";
+
+		    $pdo->prepare($sql)->execute();
+
+
+        }
         
 
 ?>

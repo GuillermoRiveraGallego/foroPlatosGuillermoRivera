@@ -32,27 +32,27 @@
       ?>
 
       <div class="input-field">
-        <input type="text" name="nombrePropioUsuario" required>
+        <input type="text" name="nombrePropioUsuario" required maxlength="40">
         <label>Nombre</label>
       </div>
 
       <div class="input-field">
-        <input type="text" name="apellidosPropioUsuario" required>
+        <input type="text" name="apellidosPropioUsuario" required maxlength="40">
         <label>Apellidos</label>
       </div>
 
         <div class="input-field">
-        <input type="text" name="nombreUsuario" required>
+        <input type="text" name="nombreUsuario" required maxlength="40">
         <label>Nombre de Usuario</label>
       </div>
 
       <div class="input-field">
-        <input type="password" name="contrasena" required>
+        <input type="password" name="contrasena" required maxlength="40">
         <label>Contraseña</label>
       </div>
 
       <div class="input-field">
-        <input type="password" name="contrasenaRepetida" required>
+        <input type="password" name="contrasenaRepetida" required maxlength="40">
         <label>Repita contraseña</label>
       </div>
 

@@ -14,17 +14,17 @@
             <div class="contenedorDatos">
                 <div class="linea">
                     <p>Nombre Usuario:</p>
-                    <input required name="nuevoNombreUsuario" type="text" value="<?php echo($PerfilUsuario[0]['nombre_usuario']);?>">
+                    <input required maxlength="40" name="nuevoNombreUsuario" type="text" value="<?php echo($PerfilUsuario[0]['nombre_usuario']);?>">
                 </div>
 
                 <div class="linea">
                     <p>Nombre:</p>
-                    <input required name="nuevoNombreDelUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['nombre']);?>">
+                    <input required maxlength="40" name="nuevoNombreDelUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['nombre']);?>">
                 </div>
                 
                 <div class="linea">
                     <p>Apellidos:</p>
-                    <input required name="nuevoApellidosUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['apellidos']); ?>">
+                    <input required maxlength="40" name="nuevoApellidosUsuario" type="text" value="<?php echo ($PerfilUsuario[0]['apellidos']); ?>">
                 </div>
                 
                 <div class="linea">

@@ -39,12 +39,12 @@
       <h2>Login</h2>
 
       <div class="input-field">
-        <input type="text" name="nombreUsuario" required>
+        <input type="text" name="nombreUsuario" required maxlength="40">
         <label>Nombre de usuario</label>
       </div>
 
       <div class="input-field">
-        <input type="password" name="contrasena" required>
+        <input type="password" name="contrasena" required maxlength="40">
         <label>Contraseña</label>
       </div>
 

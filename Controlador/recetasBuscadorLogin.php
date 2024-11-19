@@ -17,7 +17,6 @@ $maxPagina=floor($numRecetas/$tamanioPagina);
 
 $primeraReceta=$numPagina*$tamanioPagina;
 
-
 $recetasNombre =selectRecetasBuscador($primeraReceta,$tamanioPagina,$nombre_receta);
 
 $recetasIngredientes = selectRecetasBuscadorIngredientes ($primeraReceta,$tamanioPagina,$nombre_receta);
