@@ -10,8 +10,9 @@ $idUsuarioQueComenta = saberIdNombreUsuario($nombreUsuarioQueComenta);
 
 $receta = verUnaReceta();
 
-// Verificar si NombreUsuarioPorId devuelve un resultado válido
 $usuarioResultado = NombreUsuarioPorId($receta["id_usuario"]);
+
+/*comprobar si ha devuelto algo xq sino hay q poner usuario desconocido */
 
 if ($usuarioResultado && isset($usuarioResultado["nombre_usuario"])) {
     $receta["nombreDelUsuario"] = $usuarioResultado["nombre_usuario"];
@@ -33,32 +34,14 @@ if (isset($idsIngredientes) && !empty($idsIngredientes)) {
     }
 }
 
+//Aqui me guardo todos los comentarios
 $comentarios = devuelveComentariosReceta($receta["id"]);
 
-	function mostrarComentario($comentarios, $miComentario, $margen){
-
-        $usuarioNombre = NombreUsuarioPorId($miComentario['id_usuario']);
-            if ($usuarioNombre && isset($usuarioNombre['nombre_usuario'])) {
-                echo "Autor: {$usuarioNombre['nombre_usuario']}<br>";
-            } else {
-                 echo "Autor: Usuario desconocido<br>";
-            }
-
-		echo "Contenido: {$miComentario['texto']}<br>";
-	
-		$respuestas=array();
-		foreach($comentarios as $comentario){
-			if($comentario['id_comentario_respuesta']==$miComentario['id']){
-				$respuestas[]=$comentario;
-			}
-		}
-		echo "<div style='margin-left:{$margen}px;'>";
-		foreach($respuestas as $respuesta){
-			mostrarComentario($comentarios, $respuesta, $margen+150);
-		}
-		echo "</div>";
-	}
-
+// aqui consigo el nombre a traves del id del usuario
+foreach ($comentarios as &$comentario) {
+    $usuario = NombreUsuarioPorId($comentario['id_usuario']);
+    $comentario['nombre_usuario'] = $usuario['nombre_usuario'] ?? 'Usuario desconocido';
+}
 
 
 include("../Vista/headerLogueadoHome.php");

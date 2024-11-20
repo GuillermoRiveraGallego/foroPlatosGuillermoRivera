@@ -42,9 +42,10 @@
     </span>
   </div>
 
+  <!-- texto de la descripcion -->
   <p class="descripcion"><?php echo $receta['descripcion'] ?? 'No disponible'; ?></p>
 
-  
+  <!-- Comentarios:  -->
   <div class="contenedorComentarios">
   <?php 
   function renderizarComentarios($comentarios, $comentarioPadreId, $recetaId, $idUsuarioQueComenta, $nivel = 0) {
@@ -56,8 +57,7 @@
                   <div class="comentarioHeader">
                       <span class="comentarioUsuario">
                           <?php 
-                          $usuario = NombreUsuarioPorId($comentario['id_usuario']);
-                          echo $usuario['nombre_usuario'] ?? 'Usuario desconocido';
+                          echo $comentario['nombre_usuario'];
                           ?>
                       </span>
                       <span class="comentarioFecha">
@@ -88,12 +88,12 @@
       }
   }
 
-  // Llamar a la función para los comentarios principales
+  // Funcion para los comentarios padre con el null
   renderizarComentarios($comentarios, null, $receta['id'], $idUsuarioQueComenta);
   ?>
 </div>
 
-  <!-- Formulario para agregar un nuevo comentario -->
+  <!-- comentario normal -->
   <div class="campo">
     <span class="valorCampoComentario">
       <form action="../Controlador/comentarReceta.php" method="post">
@@ -107,7 +107,7 @@
           <option value="5">5</option>
         </select>
 
-        <textarea required name="comentario" rows="5" placeholder="Escribe tu comentario aquí..." maxlength="250"></textarea>
+        <textarea required class="comentarioPrincipal" name="comentario" rows="5" placeholder="Escribe tu comentario aquí..." maxlength="250"></textarea>
 
         <input type="hidden" name="nombreUsuarioComenta" value="<?php echo $nombreUsuarioQueComenta; ?>">
         <input type="hidden" name="idUsuarioComenta" value="<?php echo $idUsuarioQueComenta; ?>">
@@ -124,6 +124,10 @@
 </div>
 
 <style>
+
+  .comentarioPrincipal{
+    max-width: 90%;
+  }
 
 /* Contenedor principal */
 .contenedorReceta {
@@ -278,13 +282,18 @@ form {
 /* Formularios de respuesta */
 .formRespuesta {
     margin-top: 10px;
-    max-width: 100%;
+    max-width:80%;
+    
 }
 
 .formRespuesta .contenedorBotonComentar {
     margin-top: 10px;
     text-align: right;
     width: 100%;
+}
+
+textarea:placeholder-shown {
+    height: 20px; /* Más pequeño si está vacío */
 }
 </style>
 
