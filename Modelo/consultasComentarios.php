@@ -26,7 +26,6 @@
 
     }
 
-
     function crearRespuesta ($idUsuarioResponde) {
         $pdo = conexionBaseDatos();
 
@@ -34,7 +33,6 @@
         $idComentarioRespondido = $_POST["idComentarioRespondido"];
         $respuestaTexto = $_POST["comentarioRespuesta"];
         $fecha_creacion = date('Y-m-d H:i:s');
-
 
         $sql = "INSERT INTO Comentario (id_receta,id_usuario,id_comentario_respuesta,texto,fecha_creacion,valoracion) values ('$idRecetaRespuesta','$idUsuarioResponde','$idComentarioRespondido','$respuestaTexto','$fecha_creacion',NULL)";
 		$pdo->prepare($sql)->execute();

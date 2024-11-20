@@ -60,6 +60,24 @@
         <p class="comentarioTexto"><?php echo ($comentarioVista["textoComentario"]); ?></p>
       </div>
 
+              <!-- Si el comentario tiene respuestas, iteramos sobre ellas -->
+              <?php if (!empty($comentarioVista["respuestas"])): ?>
+          <div class="respuestas">
+            <h4>Respuestas:</h4>
+            <?php foreach ($comentarioVista["respuestas"] as $respuesta): ?>
+              <div class="respuesta">
+                <div class="respuestaHeader">
+                  <span class="respuestaUsuario"><?php echo ($respuesta["usuarioComenta"]); ?></span>
+                  <span class="respuestaFecha"><?php echo ($respuesta["fechaCreacion"]); ?></span>
+                </div>
+                <p class="respuestaTexto"><?php echo ($respuesta["textoComentario"]); ?></p>
+              </div>
+
+              
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
       <form action="../Controlador/repuestasComentarios.php" method="post" class="formRespuesta">
             <textarea required name="comentarioRespuesta" rows="5" placeholder="Responder..." maxlength="250"></textarea>   <!-- texto respuesta -->
             <input type="hidden" name="idComentarioRespondido" value="<?php echo($comentarioVista["idComentario"])?>"> <!-- id de comentario al que respondemos  -->
