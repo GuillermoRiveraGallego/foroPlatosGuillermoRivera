@@ -71,4 +71,19 @@
         
         return $recetas;
     }
+
+    function verUnaRecetaPorIDUsuario($idUsuario) {
+        $pdo = conexionBaseDatos();
+    
+
+        $receta = $pdo->query("SELECT nombre_receta FROM Receta WHERE id_usuario='$idUsuario'")->fetchAll(PDO::FETCH_ASSOC);
+    
+
+        if (!$receta) {
+            return "No se encontraron recetas para este usuario.";
+        }
+    
+        return $receta; 
+    }
+    
     

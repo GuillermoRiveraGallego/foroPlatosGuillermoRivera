@@ -20,31 +20,32 @@
     function devuelveComentariosReceta ($id_receta){
 
         $pdo = conexionBaseDatos();
-        $resultado=$pdo->query("SELECT * FROM Comentario WHERE id_receta = '$id_receta' and id_comentario_respuesta is NULL ")->fetchAll(PDO::FETCH_ASSOC);
+        $resultado=$pdo->query("SELECT * FROM Comentario WHERE id_receta = '$id_receta'")->fetchAll(PDO::FETCH_ASSOC);
 
         return $resultado;
 
     }
 
-    function crearRespuesta ($idUsuarioResponde) {
+
+    function crearRespuesta() {
+
         $pdo = conexionBaseDatos();
 
-        $idRecetaRespuesta = $_POST["idRecetaRespondida"];
-        $idComentarioRespondido = $_POST["idComentarioRespondido"];
-        $respuestaTexto = $_POST["comentarioRespuesta"];
+        $id_receta = $_POST["id_receta"];
+        $id_usuario = $_POST["id_usuario"];
+        $id_comentario_respuesta = $_POST["id_comentario_respuesta"];
+        $texto = $_POST["respuesta"];
         $fecha_creacion = date('Y-m-d H:i:s');
-
-        $sql = "INSERT INTO Comentario (id_receta,id_usuario,id_comentario_respuesta,texto,fecha_creacion,valoracion) values ('$idRecetaRespuesta','$idUsuarioResponde','$idComentarioRespondido','$respuestaTexto','$fecha_creacion',NULL)";
-		$pdo->prepare($sql)->execute();
-
+    
+        $sql = "INSERT INTO Comentario (id_receta, id_usuario, id_comentario_respuesta, texto, fecha_creacion) 
+                VALUES ('$id_receta', '$id_usuario', '$id_comentario_respuesta', '$texto', '$fecha_creacion')";
+    
+        // Preparar y ejecutar la consulta
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+    
+        return true;
     }
+    
 
 
-    function devuelveRespuestasReceta ($id_receta){
-
-        $pdo = conexionBaseDatos();
-        $resultado=$pdo->query("SELECT * FROM Comentario WHERE id_receta = '$id_receta' and id_comentario_respuesta is not NULL ")->fetchAll(PDO::FETCH_ASSOC);
-
-        return $resultado;
-
-    }

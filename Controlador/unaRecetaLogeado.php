@@ -34,54 +34,32 @@ if (isset($idsIngredientes) && !empty($idsIngredientes)) {
 }
 
 $comentarios = devuelveComentariosReceta($receta["id"]);
-$listaComentarios = [];
 
-$respuestas = devuelveRespuestasReceta($receta["id"]);
-$listaRespuestas = [];
+	function mostrarComentario($comentarios, $miComentario, $margen){
 
-if (isset($respuestas) && !empty($respuestas)) {
-    foreach ($respuestas as $respuesta) {
-        // Obtenemos el nombre del usuario
-        $usuario = NombreUsuarioPorId($respuesta["id_usuario"]);
-        $nombreUsuario = ($usuario && isset($usuario["nombre_usuario"]))
-            ? $usuario["nombre_usuario"]
-            : "Usuario desconocido";
-
-        // Construimos el array de respuestas
-        $listaRespuestas[] = [
-            "usuarioComenta" => $nombreUsuario,                    // Usuario que ha comentado
-            "fechaCreacion" => $respuesta["fecha_creacion"],       // Fecha del comentario
-            "textoComentario" => $respuesta["texto"],             // Texto del comentario
-            "idComentarioRespondido" => $respuesta["id_comentario_respuesta"] // ID del comentario al que responde
-        ];
-    }
-}
-
-/* Relleno los comentarios */
-if (isset($comentarios) && !empty($comentarios)) {
-    foreach ($comentarios as $comenta) {
-        // Crear el array base para el comentario
-        $comentarioData = [
-            "usuarioComenta" => NombreUsuarioPorId($comenta["id_usuario"])["nombre_usuario"] ?? "Usuario desconocido",
-            "fechaCreacion" => $comenta["fecha_creacion"],                    
-            "textoComentario" => $comenta["texto"],                           
-            "valoracion" => $comenta["valoracion"],                              
-            "idComentario" => $comenta["id"],                              
-            "idRecetaComentada" => $comenta["id_receta"],
-            "respuestas" => [] // Inicializar el array de respuestas vacío
-        ];
-
-        // Asociar las respuestas correspondientes
-        foreach ($listaRespuestas as $respuesta) {
-            if ($respuesta["idComentarioRespondido"] === $comenta["id"]) {
-                $comentarioData["respuestas"][] = $respuesta;
+        $usuarioNombre = NombreUsuarioPorId($miComentario['id_usuario']);
+            if ($usuarioNombre && isset($usuarioNombre['nombre_usuario'])) {
+                echo "Autor: {$usuarioNombre['nombre_usuario']}<br>";
+            } else {
+                 echo "Autor: Usuario desconocido<br>";
             }
-        }
 
-        // Añadir el comentario con sus respuestas a la lista final
-        $listaComentarios[] = $comentarioData;
-    }
-}
+		echo "Contenido: {$miComentario['texto']}<br>";
+	
+		$respuestas=array();
+		foreach($comentarios as $comentario){
+			if($comentario['id_comentario_respuesta']==$miComentario['id']){
+				$respuestas[]=$comentario;
+			}
+		}
+		echo "<div style='margin-left:{$margen}px;'>";
+		foreach($respuestas as $respuesta){
+			mostrarComentario($comentarios, $respuesta, $margen+150);
+		}
+		echo "</div>";
+	}
+
+
 
 include("../Vista/headerLogueadoHome.php");
 include("../Vista/verUnaRecetaLogeado.php");
