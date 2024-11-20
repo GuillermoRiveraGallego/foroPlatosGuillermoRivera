@@ -36,7 +36,7 @@ if (isset($idsIngredientes) && !empty($idsIngredientes)) {
 $comentarios = devuelveComentariosReceta($receta["id"]);
 $listaComentarios = [];
 
-$respuestas = devuelveRespuestasReceta ($receta["id"]);
+$respuestas = devuelveRespuestasReceta($receta["id"]);
 $listaRespuestas = [];
 
 if (isset($respuestas) && !empty($respuestas)) {
@@ -57,42 +57,34 @@ if (isset($respuestas) && !empty($respuestas)) {
     }
 }
 
-var_dump($listaRespuestas);exit;
-
 /* Relleno los comentarios */
 if (isset($comentarios) && !empty($comentarios)) {
-
     foreach ($comentarios as $comenta) {
-
-        $usuario = NombreUsuarioPorId($comenta["id_usuario"]);   /*Guardamos el usuario que ha comentado*/
-        $nombreUsuario = ($usuario && isset($usuario["nombre_usuario"]))
-            ? $usuario["nombre_usuario"]
-            : "Usuario desconocido";
-
-        $listaComentarios[] = [
-            "usuarioComenta" => $nombreUsuario,                               /*Usuario que ha comentado*/
-            "fechaCreacion" => $comenta["fecha_creacion"],                    /*fecha de comentario*/
-            "textoComentario" => $comenta["texto"],                           /*texto de comentario*/
-            "valoracion" => $comenta["valoracion"],                              /*Valoracion*/
-            "idComentario" => $comenta["id"],                              /*id comentario */
+        // Crear el array base para el comentario
+        $comentarioData = [
+            "usuarioComenta" => NombreUsuarioPorId($comenta["id_usuario"])["nombre_usuario"] ?? "Usuario desconocido",
+            "fechaCreacion" => $comenta["fecha_creacion"],                    
+            "textoComentario" => $comenta["texto"],                           
+            "valoracion" => $comenta["valoracion"],                              
+            "idComentario" => $comenta["id"],                              
             "idRecetaComentada" => $comenta["id_receta"],
-            "respuestas" => [] 
+            "respuestas" => [] // Inicializar el array de respuestas vacío
         ];
 
+        // Asociar las respuestas correspondientes
         foreach ($listaRespuestas as $respuesta) {
             if ($respuesta["idComentarioRespondido"] === $comenta["id"]) {
                 $comentarioData["respuestas"][] = $respuesta;
             }
         }
 
-        // Añadimos el comentario (con o sin respuestas) a la lista final
+        // Añadir el comentario con sus respuestas a la lista final
         $listaComentarios[] = $comentarioData;
-
-
     }
 }
 
 include("../Vista/headerLogueadoHome.php");
 include("../Vista/verUnaRecetaLogeado.php");
 include("../Vista/footer.php");
+
 ?>
