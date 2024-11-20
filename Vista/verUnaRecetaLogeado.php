@@ -47,9 +47,6 @@
   <span class="nombreCampo">Comentarios:</span>
   <div class="contenedorComentarios">
 
-
-
-
         <!-- Aqui las respuestas -->
 
     <?php foreach ($listaComentarios as $comentarioVista): ?>
@@ -64,15 +61,16 @@
       </div>
 
       <form action="../Controlador/repuestasComentarios.php" method="post" class="formRespuesta">
-            <textarea required name="comentarioRespuesta" rows="5" placeholder="Responder..." maxlength="250"></textarea>
+            <textarea required name="comentarioRespuesta" rows="5" placeholder="Responder..." maxlength="250"></textarea>   <!-- texto respuesta -->
+            <input type="hidden" name="idComentarioRespondido" value="<?php echo($comentarioVista["idComentario"])?>"> <!-- id de comentario al que respondemos  -->
+            <input type="hidden" name="idRecetaRespondida" value="<?php echo($comentarioVista["idRecetaComentada"])?>"> <!-- id receta del comentario  -->
+            <input type="hidden" name="redirectUrl" id="redirectUrl" value="<?php echo ($_SERVER['REQUEST_URI']); ?>"> <!-- ruta de vuelta  -->
+
             <div class="contenedorBotonComentar">
             <input class="enviarComentario" type="submit" value="Comentar" name="Comentar">
-            <input type="hidden" name="idUsuarioRespondido" value="<?php echo ($comentarioVista["idUsuarioComenta"]);?>">
-            <input type="hidden" name="idRecetaComentada" value="<?php echo ($comentarioVista["recetaComentada"]);?>">
           </div>
       </form>
       
-    
       <?php endforeach; ?>
   </div>
 </div>

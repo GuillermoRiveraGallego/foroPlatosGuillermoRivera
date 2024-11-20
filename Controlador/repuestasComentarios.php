@@ -1,24 +1,16 @@
 <?php
+
 session_start();
 include("../Modelo/consultasUsuarios.php");
 include("../Modelo/consultasComentarios.php");
 
+$idUsuarioResponde = saberIdNombreUsuario($_SESSION["nombreUsuario"]);
 
-if (isset($_POST["Comentar"])){
+crearRespuesta($idUsuarioResponde);
 
-$usuarioRespondido = $_POST["idUsuarioRespondido"];
-$usuarioResponde = saberIdNombreUsuario($_SESSION["nombreUsuario"]);
-$textoRespuesta = $_POST["comentarioRespuesta"];
-$idRecetaDeComentarios = $_POST["idRecetaComentada"];
+$rutaVolver = $_POST['redirectUrl'];
 
-insertarRespuesta($usuarioResponde);
+header("Location: $rutaVolver");
 
-}
-
-
-echo("El usuario :".$usuarioResponde." le ha dicho a ".$usuarioRespondido." que ".$textoRespuesta." en al receta ".$idRecetaDeComentarios);
-
-/*Consulta*/
-/*SELECT * FROM `Comentario` WHERE id_receta = 5 AND id_usuario_responde IS NOT NULL;*/
 
 ?>
