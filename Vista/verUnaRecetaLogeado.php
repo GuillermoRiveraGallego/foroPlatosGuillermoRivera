@@ -174,6 +174,11 @@
     border-bottom: 1px solid #555;
 }
 
+a{
+  text-decoration: none;
+  color: red;
+}
+
 .campo:last-child {
     border-bottom: none;
 }

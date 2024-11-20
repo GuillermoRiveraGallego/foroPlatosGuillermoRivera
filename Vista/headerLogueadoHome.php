@@ -14,6 +14,7 @@
             
         <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
 
+        <a class="homePerfil" href="../Controlador/index.php">Home</a>
 
             <a href="../Controlador/verPerfil.php">VER PERFIL</a> 
         </header>

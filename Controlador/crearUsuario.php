@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if(isset($_POST['enviar'])){
 
     include("../Modelo/consultasUsuarios.php");

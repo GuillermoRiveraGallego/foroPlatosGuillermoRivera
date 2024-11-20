@@ -1,5 +1,4 @@
 <?php
-
 include("../Modelo/consultasRecetas.php");
 
 $receta = verUnaReceta();

@@ -1,5 +1,11 @@
 <?php
+session_start();
 
+if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
+
+    header("Location: index.php");
+    exit;
+}
 include("../Modelo/consultasUsuarios.php");
 include("../Modelo/consultasRecetas.php");
 
@@ -18,7 +24,7 @@ if (isset($_GET["perfil"])) {
         $idDelUsuario = saberIdNombreUsuario($nombreUsuario);
         $recetasDelPerfil = verUnaRecetaPorIDUsuario ($idDelUsuario);
 
-        include("../Vista/headerLogueado.php");
+        include("../Vista/headerLogueadoHome.php");
         include("../Vista/verUnPerfil.php");
         include("../Vista/footer.php");
 
