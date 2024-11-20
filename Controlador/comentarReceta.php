@@ -1,6 +1,5 @@
 <?php
 
-
 include("../Modelo/consultasComentarios.php");
 
 $nombreUsuarioComenta = $_POST["nombreUsuarioComenta"];

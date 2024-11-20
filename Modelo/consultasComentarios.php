@@ -31,6 +31,13 @@
         $pdo = conexionBaseDatos();
 
         $usuarioRespondido = $_POST["idUsuarioRespondido"];
+
+        $usuarioRespondido = $_POST["idUsuarioRespondido"];
+
+        if (empty($usuarioRespondido)) {
+            $usuarioRespondido = 99;
+        }
+        
         $textoRespuesta = $_POST["comentarioRespuesta"];
         $idRecetaDeComentarios = $_POST["idRecetaComentada"];
         $fecha_creacion = date('Y-m-d H:i:s');

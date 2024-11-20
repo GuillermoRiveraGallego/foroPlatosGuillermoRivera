@@ -30,6 +30,8 @@
     color: red;
     width: 100%;
 
+    
+
 }
 
 .contenedorerrorUser {
