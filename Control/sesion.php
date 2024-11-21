@@ -1,6 +1,5 @@
 <?php
 
-
 function control(){
     session_start();
 
@@ -18,4 +17,5 @@ if (isset($_SESSION["tiempoInicioSesion"]) && (time() - $_SESSION["tiempoInicioS
 }
 
 $_SESSION["tiempoInicioSesion"] = time();
+
 }

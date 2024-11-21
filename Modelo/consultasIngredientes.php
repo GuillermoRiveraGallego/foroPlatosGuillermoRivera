@@ -15,8 +15,6 @@ function selectNombreIngrediente($nombre) {
 }
 
 
-
-
 function CrearIngrediente($nombreIngrediente){
 		
     $pdo = conexionBaseDatos();
@@ -26,5 +24,15 @@ function CrearIngrediente($nombreIngrediente){
 
 }
 
+
+
+
+function nombresIngredientes(){
+
+    $pdo = conexionBaseDatos();
+    $Ingredientes=$pdo->query("SELECT nombre FROM Ingrediente")->fetchAll(PDO::FETCH_ASSOC);
+    return $Ingredientes;
+
+}
 
 

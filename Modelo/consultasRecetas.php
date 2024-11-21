@@ -105,4 +105,18 @@
 
 
     }
+
+
+    function ultimaRecetaAnadida() {
+
+        $pdo = conexionBaseDatos();
+
+        $consulta = $pdo->query("SELECT id FROM Receta WHERE id = (SELECT MAX(id) FROM Receta)");
+    
+
+        $recetas = $consulta->fetch(PDO::FETCH_ASSOC);
+    
+        return $recetas ? $recetas['id'] : null;
+    }
+    
     
