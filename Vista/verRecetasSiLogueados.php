@@ -6,6 +6,10 @@ echo "<div class='cuerpoRecetas'>";
         if (isset($_GET["usuarioEliminado"]) && $_GET["usuarioEliminado"] == "true") {
             echo("<div class='mensajeEliminacion'><span>USUARIO ELIMINADO</span></div>");
         }
+
+        if (isset($_GET["recetaEliminado"]) && $_GET["recetaEliminado"] == "true") {
+            echo("<div class='mensajeEliminacion'><span>RECETA ELIMINADA</span></div>");
+        }
         
 
 foreach($recetas as $receta){

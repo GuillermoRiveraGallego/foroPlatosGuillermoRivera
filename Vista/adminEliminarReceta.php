@@ -1,15 +1,23 @@
 
 <div class="contenedorAdminEliminarUsuario">
-
     <div class="adminEliminarUser">
-        <form action="../Controlador/adminEliminaUsuario.php" method="post">
+        <form action="../Controlador/adminFuncionEliminarReceta.php" method="post">
             <label for="nombreUsuario">Nombre de Receta a eliminar:</label>
-            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Introduce el usuario" required>
-            <button type="submit" class="botonEliminar">Eliminar Usuario</button>
+            <select id="nombreUsuario" name="nombreUsuario" required>
+                <option value="" disabled selected>Selecciona una receta</option>
+                <?php
+                // Bucle para recorrer el array y generar las opciones
+                foreach ($listaRecetasAEliminar as $receta) {
+                    echo '<option required value="' . ($receta["id"]) . '">' . ($receta["nombre_receta"]) . '</option>';
+                }
+                ?>
+            </select>
+            <button type="submit" name="botonEliminar" class="botonEliminar">Eliminar Receta</button>
         </form>
     </div>
-
 </div>
+
+
 
 <style>
     .contenedorAdminEliminarUsuario {

@@ -85,5 +85,24 @@
     
         return $receta; 
     }
+
+    function recetasIdNombre(){
+
+        $pdo = conexionBaseDatos();
+        $recetas=$pdo->query("SELECT id,nombre_receta FROM Receta")->fetchAll(PDO::FETCH_ASSOC);
+        return $recetas;
+
+    }
     
+
+    function  eliminarReceta($id){
+
+        $pdo = conexionBaseDatos();
+
+        $sql = "DELETE FROM Receta WHERE id = '$id'";
+
+        $pdo->prepare($sql)->execute();
+
+
+    }
     
