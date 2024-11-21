@@ -9,6 +9,9 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
 include("../Modelo/consultasUsuarios.php");
 include("../Modelo/consultasRecetas.php");
 
+$esAdmin = esAdmin($_SESSION["nombreUsuario"]);
+
+
 if (isset($_GET["perfil"])) {
     $nombreUsuario = $_GET["perfil"];
 

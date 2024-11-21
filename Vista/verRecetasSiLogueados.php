@@ -1,6 +1,13 @@
 <?php
 
 echo "<div class='cuerpoRecetas'>";
+
+
+        if (isset($_GET["usuarioEliminado"]) && $_GET["usuarioEliminado"] == "true") {
+            echo("<div class='mensajeEliminacion'><span>USUARIO ELIMINADO</span></div>");
+        }
+        
+
 foreach($recetas as $receta){
 
     $id = $receta['id'];
@@ -44,6 +51,23 @@ echo "</div>";
 
 
 <style>
+
+.mensajeEliminacion{
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.mensajeEliminacion span{
+
+    padding: 5px;
+    background-color: lightgreen;
+    color: white;
+    border-radius: 5px;
+
+}
 
     .cuerpoRecetas{
 

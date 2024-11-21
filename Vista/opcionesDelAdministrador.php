@@ -5,11 +5,9 @@
     </div>
     <div class="botones">
         <button class="azul"><a href="../Controlador/adminModificaReceta.php">Modificar Receta</a></button>
-        <button class="azul"><a href="../Controlador/adminHaceAdministrador.php">Hacer Administrador</a></button>
     </div>
     <div class="botones">
         <button class="rojo"><a href="../Controlador/adminEliminaReceta.php">Eliminar Receta</a></button>
-        <button class="rojo"><a href="../Controlador/adminEliminaUsuario.php">Eliminar Usuario</a></button>
     </div>
 </div>
 

@@ -14,12 +14,12 @@ if (isset($_POST["botonEliminar"])){
 
  if (selectNombreUsuario($nombreUsuarioHacerAdmin)){
     hacerAdmin($nombreUsuarioHacerAdmin);
-    header("Location: ../Controlador/adminHaceAdministrador.php?error=usuarioOkAdmin");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 
  } else {
 
-    header("Location: ../Controlador/adminHaceAdministrador.php?error=usuarioNoAdmin");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 
 
@@ -27,7 +27,7 @@ if (isset($_POST["botonEliminar"])){
 
 } else {
 
-    header("Location: ../Controlador/adminHaceAdministrador.php");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 
 }

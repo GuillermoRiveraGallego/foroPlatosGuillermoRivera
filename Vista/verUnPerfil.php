@@ -22,13 +22,30 @@
 
                 ?>
 
-            
-
+                <?php if ($esAdmin) { ?>
+                    <div class='botones'>
+                        <form action="../Controlador/adminFuncionEliminaUsuario.php" method="post">
+                            <input type="hidden" name="nombreUsuario" value="<?php echo ($PerfilUsuario[0]['nombre_usuario']); ?>">
+                            <input type="submit" name="botonEliminar" value="Eliminar Usuario">
+                        </form>
+                        <form action="../Controlador/adminFuncionHacerAdmin.php" method="post">
+                            <input type="hidden" name="nombreUsuario" value="<?php echo ($PerfilUsuario[0]['nombre_usuario']); ?>">
+                            <input type="submit" name="botonEliminar" value="Hacer Admin">
+                        </form>
+                    </div>
+                <?php } ?>
     </div>
 
 </div>
 
 <style>
+
+.botones {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
 /* Contenedor principal */
 .contenedorPerfilGrande {
     margin-top: 150px;
@@ -113,6 +130,53 @@ text-align: center;
     border-radius: 5px;
     font-size: 18px;
     padding: 5px;
+}
+
+
+/* Contenedor de botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Botón "Eliminar Usuario" */
+.botones input[type="submit"] {
+    background-color: #ea4540; /* Color rojo distintivo */
+    color: white; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones input[type="submit"]:hover {
+    background-color: #f90700; /* Rojo más intenso al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandamiento suave */
+}
+
+/* Botón alternativo (si necesitas más botones en el futuro) */
+.botones button.alternativo {
+    background-color: #489af1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones button.alternativo:hover {
+    background-color: #007cff;
+    transform: scale(1.05);
 }
 
 
