@@ -1,11 +1,9 @@
 <?php
-session_start();
+include("../Control/sesion.php");
+control();
 
-if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
 
-    header("Location: index.php");
-    exit;
-}
+
 include("../Vista/headerAdministradoresHome.php");
 include("../Vista/adminModificaReceta.php");
 include("../Vista/footer.php");

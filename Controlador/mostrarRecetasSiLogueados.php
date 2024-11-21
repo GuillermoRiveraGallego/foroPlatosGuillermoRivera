@@ -6,6 +6,15 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
     exit;
 }
 
+if (isset($_SESSION["tiempoInicioSesion"]) && (time() - $_SESSION["tiempoInicioSesion"]) > 120) {
+    session_unset();
+    session_destroy();
+    header("Location: index.php?error=inactividad");
+    exit;
+}
+
+$_SESSION["tiempoInicioSesion"] = time();
+
 include "../Modelo/consultasRecetas.php";
 
 $tamanioPagina=5;

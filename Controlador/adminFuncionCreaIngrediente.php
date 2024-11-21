@@ -1,16 +1,11 @@
 <?php
+include("../Control/sesion.php");
+control();
 
-session_start();
 
-if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
-
-    header("Location: index.php");
-    exit;
-}
 
 include("../Modelo/consultasIngredientes.php");
 $nombreIngredienteCrear = $_POST["nombreUsuario"];
-
 
 
 if (isset($_POST["botonEliminar"])){

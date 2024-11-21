@@ -1,6 +1,11 @@
 <?php
 
 echo "<div class='cuerpoRecetas'>";
+
+if (isset($_GET["error"]) && $_GET["error"] == "inactividad") {
+    echo("<div class='mensajeEliminacion'><span>Sesion cerrada por inactividad</span></div>");
+}
+
 foreach($recetas as $receta){
 
     $id = $receta['id'];
@@ -45,6 +50,13 @@ echo "</div>";
 
 
 <style>
+
+    .mensajeEliminacion{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
 
     .cuerpoRecetas{
 
