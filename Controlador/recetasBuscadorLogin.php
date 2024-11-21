@@ -33,10 +33,14 @@ $recetas = array_merge($recetasNombre, $recetasIngredientes);
 $recetas = array_map("unserialize", array_unique(array_map("serialize", $recetas)));
 
 foreach ($recetas as &$receta) {
-
-    $receta["nombreDelUsuario"] = NombreUsuarioPorId($receta["id_usuario"])["nombre_usuario"];
-
+    $nombreUsuario = NombreUsuarioPorId($receta["id_usuario"]);
+    if ($nombreUsuario) { // Verifica si no es false
+        $receta["nombreDelUsuario"] = $nombreUsuario["nombre_usuario"];
+    } else {
+        $receta["nombreDelUsuario"] = "Usuario desconocido"; // Valor predeterminado si no se encuentra el usuario
+    }
 }
+
 
 unset($receta);
 

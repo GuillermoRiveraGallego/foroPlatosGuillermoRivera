@@ -54,13 +54,6 @@
       }
       ?>
 
-      <div class="forget">
-        <label for="remember">
-          <input type="checkbox" name="recordarUsuario">
-          <p>Recuérdame</p>
-        </label>
-      </div>
-
       <button type="submit" name="botonEnviarLogin">Enviar</button>
 
       <div class="register">

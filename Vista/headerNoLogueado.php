@@ -29,7 +29,9 @@
             <input type="text" name="buscarReceta" placeholder="Buscar receta">
     
         </form>
-
+        <div class="c">
+            
             <a href="../Controlador/login.php">INICIAR SESION</a> 
+        </div>
         </header>
 </div>

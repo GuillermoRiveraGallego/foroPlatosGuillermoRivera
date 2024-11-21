@@ -13,7 +13,13 @@
         <header class="header">
             
         <img class="logoHeader" src="../Imagenes/foroLogo5.png" alt="">
+        
 
+        <div class="c">
+            <a class="homePerfil" href="../Controlador/index.php">Home</a>
             <a href="../Controlador/login.php">INICIAR SESION</a> 
+        </div>
+
+            
         </header>
 </div>

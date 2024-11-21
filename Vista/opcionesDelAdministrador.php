@@ -1,16 +1,14 @@
 <div class="contenedor">
     <div class="botones">
         <button class="verde"><a href="../Controlador/adminCreaIngrediente.php">Crear Ingrediente</a></button>
+        
+    </div>
+    <div class="botones">
         <button class="verde"><a href="../Controlador/adminCrearReceta.php">Crear Receta</a></button>
-    </div>
-    <div class="botones">
         <button class="azul"><a href="../Controlador/adminModificaReceta.php">Modificar Receta</a></button>
-    </div>
-    <div class="botones">
         <button class="rojo"><a href="../Controlador/adminEliminaReceta.php">Eliminar Receta</a></button>
     </div>
 </div>
-
 
 <style>
 body {
