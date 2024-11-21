@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (isset($_POST["botonEnviarLogin"])){
 
     include("../Modelo/consultasUsuarios.php");
