@@ -1,11 +1,13 @@
 <?php
+
 include("../Control/sesion.php");
 control();
 
 include("../Modelo/consultasRecetas.php");
 
-$listaRecetasAEliminar = recetasIdNombre();
+$id = $_POST["idReceta"];
+$fotoGuardada = recetafoto($id);
 
 include("../Vista/headerAdministradoresHome.php");
-include("../Vista/adminModificaReceta.php");
+include("../Vista/adminFuncion2ModificarReceta.php");
 include("../Vista/footer.php");

@@ -113,7 +113,6 @@
 
         $consulta = $pdo->query("SELECT id FROM Receta WHERE id = (SELECT MAX(id) FROM Receta)");
     
-
         $recetas = $consulta->fetch(PDO::FETCH_ASSOC);
     
         return $recetas ? $recetas['id'] : null;
@@ -134,4 +133,39 @@
         $pdo->prepare($sql)->execute();
 
 	    }
+
+        function verUnaRecetaPorId ($id){
+
+            $pdo = conexionBaseDatos();
+            $receta=$pdo->query("SELECT * FROM Receta WHERE id = '$id'")->fetch(PDO::FETCH_ASSOC);
+       
+            return $receta;
     
+        }
+
+
+        function updateReceta($imagenModificada){
+
+            $pdo = conexionBaseDatos();
+            $idReceta = $_POST["idReceta"];
+            $descripcionModificada = $_POST["descripcion"];
+            $tipoModificada = $_POST["tipo"];
+            $dificultadModificada = $_POST["dificultad"];
+            $nombreRecetaModificada = $_POST["nombre_receta"];
+            $fechaActualizacionModificada = date('Y-m-d H:i:s');
+
+            $sql = "UPDATE Receta SET  nombre_receta = '$nombreRecetaModificada', fecha_actualizacion = '$fechaActualizacionModificada', dificultad = '$dificultadModificada', foto_receta = '$imagenModificada', tipo = '$tipoModificada', descripcion = '$descripcionModificada' WHERE id = '$idReceta'";
+
+		    $pdo->prepare($sql)->execute();
+
+
+        }
+    
+
+        function recetafoto($id): mixed{
+
+            $pdo = conexionBaseDatos();
+            $recetas=$pdo->query("SELECT foto_receta FROM Receta where id = '$id'")->fetch(PDO::FETCH_ASSOC);
+            return $recetas["foto_receta"];
+    
+        }
