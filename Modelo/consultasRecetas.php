@@ -118,5 +118,20 @@
     
         return $recetas ? $recetas['id'] : null;
     }
-    
+    function crearRecetas($nombreImagen,$usuarioCreaReceta){
+		
+        $pdo = conexionBaseDatos();
+
+        $nombreDeReceta = $_POST["nombre_receta"];
+        $dificultadDeReceta = $_POST["dificultad"];
+        $tipoDeReceta = $_POST["tipo"];
+        $descripcionDeReceta = $_POST["descripcion"];
+        $fechaCreacion = date('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO Receta (id_usuario,nombre_receta,fecha_creacion,fecha_actualizacion,dificultad,foto_receta,valoracion_media,tipo,descripcion) values
+         ('$usuarioCreaReceta','$nombreDeReceta','$fechaCreacion',NULL,'$dificultadDeReceta','$nombreImagen',NULL,'$tipoDeReceta','$descripcionDeReceta')";
+		
+        $pdo->prepare($sql)->execute();
+
+	    }
     

@@ -53,7 +53,6 @@ echo "</div>";
 
 ?>
 
-
 <style>
 
 .mensajeEliminacion{
@@ -68,7 +67,7 @@ echo "</div>";
 
     padding: 5px;
     background-color: lightgreen;
-    color: white;
+    color: black;
     border-radius: 5px;
 
 }

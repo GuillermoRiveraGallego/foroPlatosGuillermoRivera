@@ -1,3 +1,4 @@
+
 <div class="contenedor">
 
     <div class="botones">
@@ -6,9 +7,31 @@
         <button class="azul"><a href="../Controlador/adminModificaReceta.php">Modificar Receta</a></button>
         <button class="rojo"><a href="../Controlador/adminEliminaReceta.php">Eliminar Receta</a></button>
     </div>
+    <?php
+        if (isset($_GET["recetaCreada"]) && $_GET["recetaCreada"] == "true") {
+            echo("<div class='mensajeEliminacion'><span>RecetaCreada</span></div>");
+        } 
+?>
 </div>
 
 <style>
+
+.mensajeEliminacion{
+
+display: flex;
+width: 100%;
+justify-content: center;
+
+}
+
+.mensajeEliminacion span{
+
+padding: 5px;
+background-color: lightgreen;
+color: black;
+border-radius: 5px;
+
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;

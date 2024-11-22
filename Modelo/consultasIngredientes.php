@@ -20,7 +20,7 @@ function CrearIngrediente($nombreIngrediente){
     $pdo = conexionBaseDatos();
 
     $sql = "INSERT INTO Ingrediente (nombre) values ('$nombreIngrediente')";
-        $pdo->prepare($sql)->execute();
+    $pdo->prepare($sql)->execute();
 
 }
 
@@ -35,4 +35,26 @@ function nombresIngredientes(){
 
 }
 
+function insertarIngredienteReceta($idDelIngrediente, $idRecetaIngredientes, $cantidad, $unidad){
 
+    $pdo = conexionBaseDatos();
+
+    $sql = "INSERT INTO Ingrediente_receta (id_ingrediente,id_receta,cantidad,unidad_medida) values
+     ('$idDelIngrediente','$idRecetaIngredientes','$cantidad','$unidad')";
+    
+    $pdo->prepare($sql)->execute();
+
+}
+
+
+function selectIDIngrediente($nombre) {
+    $pdo = conexionBaseDatos();
+
+    $ingrediente = $pdo->query("SELECT id FROM Ingrediente WHERE nombre LIKE '$nombre'")->fetch(PDO::FETCH_ASSOC);
+
+    if (!empty($ingrediente)) {
+        return $ingrediente["id"]; 
+    } else {
+        return false; 
+    }
+}
