@@ -7,6 +7,12 @@ include("../Modelo/consultasIngredientes.php");
 
 $ingredientesDeReceta = ingredientesReceta($_POST["idReceta"]);
 
+if (empty($ingredientesDeReceta)) {
+
+    header("Location: ../Controlador/menuAdministradores.php?error=noIngredientes");
+    exit;
+}
+
 foreach ($ingredientesDeReceta as $ingredientes => $ingrediente) {
 
     $idIngrediente = $ingrediente["id_ingrediente"];

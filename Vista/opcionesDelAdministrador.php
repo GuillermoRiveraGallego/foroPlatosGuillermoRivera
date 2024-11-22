@@ -11,7 +11,11 @@
         if (isset($_GET["recetaCreada"]) && $_GET["recetaCreada"] == "true") {
             echo("<div class='mensajeEliminacion'><span>RecetaCreada</span></div>");
         } 
+        if (isset($_GET["error"]) && $_GET["error"] == "noIngredientes") {
+            echo("<div class='mensajeEliminacion'><span>No contiene ingredientes</span></div>");
+        } 
 ?>
+
 </div>
 
 <style>
