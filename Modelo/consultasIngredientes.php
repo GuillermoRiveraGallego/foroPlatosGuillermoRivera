@@ -24,9 +24,6 @@ function CrearIngrediente($nombreIngrediente){
 
 }
 
-
-
-
 function nombresIngredientes(){
 
     $pdo = conexionBaseDatos();
@@ -58,3 +55,30 @@ function selectIDIngrediente($nombre) {
         return false; 
     }
 }
+
+
+function selectNombreIngredienteID($nombre) {
+    $pdo = conexionBaseDatos();
+
+    $ingrediente = $pdo->query("SELECT nombre FROM Ingrediente WHERE id LIKE '$nombre'")->fetch(PDO::FETCH_ASSOC);
+
+    if (!empty($ingrediente)) {
+        return $ingrediente["nombre"]; 
+    } else {
+        return false; 
+    }
+}
+
+
+function eliminarIngredientes($idReceta, $ingrediente) {
+
+    $pdo = conexionBaseDatos();
+
+    $sql = "DELETE FROM Ingrediente_receta WHERE id_receta = $idReceta AND id_ingrediente = $ingrediente";
+
+    $pdo->exec($sql);
+
+       
+}
+
+
