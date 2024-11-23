@@ -21,5 +21,4 @@ $unidadesMedida = $_POST["unidadMedida"];
 
     header("Location: ../Controlador/menuAdministradores.php?recetaCreada=true");
 
-?>
 

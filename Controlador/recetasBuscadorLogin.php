@@ -14,6 +14,7 @@ if(isset($_GET['numPagina'])){
 else{
     $numPagina=0;
 }
+
 $numRecetas=contarRecetasTotales();
 $maxPagina=floor($numRecetas/$tamanioPagina);
 
@@ -30,13 +31,12 @@ $recetas = array_map("unserialize", array_unique(array_map("serialize", $recetas
 
 foreach ($recetas as &$receta) {
     $nombreUsuario = NombreUsuarioPorId($receta["id_usuario"]);
-    if ($nombreUsuario) { // Verifica si no es false
+    if ($nombreUsuario) {
         $receta["nombreDelUsuario"] = $nombreUsuario["nombre_usuario"];
     } else {
-        $receta["nombreDelUsuario"] = "Usuario desconocido"; // Valor predeterminado si no se encuentra el usuario
+        $receta["nombreDelUsuario"] = "Usuario desconocido"; //  si no se encuentra el usuario
     }
 }
-
 
 unset($receta);
 

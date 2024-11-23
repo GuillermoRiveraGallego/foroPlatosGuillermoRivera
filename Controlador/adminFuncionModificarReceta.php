@@ -1,20 +1,21 @@
 <?php
 
-include("../Control/sesion.php");
-control();
+if (isset($_POST["botonEliminar"])){
+    
 
-include("../Modelo/consultasRecetas.php");
+    include("../Modelo/consultasRecetas.php");
+    $id = $_POST["idReceta"];
+    $fotoGuardada = recetafoto($id);    
 
-if (!isset($_POST["idReceta"]) || empty($_POST["idReceta"])) {
+    include("../Vista/headerAdministradoresHome.php");
+    include("../Vista/adminFuncion2ModificarReceta.php");
+    include("../Vista/footer.php");
+   
+
+} else {
 
     header("Location: ../Controlador/menuAdministradores.php");
     exit;
 
 }
 
-$id = $_POST["idReceta"];
-$fotoGuardada = recetafoto($id);
-
-include("../Vista/headerAdministradoresHome.php");
-include("../Vista/adminFuncion2ModificarReceta.php");
-include("../Vista/footer.php");

@@ -13,5 +13,3 @@ $PerfilUsuario = datosUsuario($nombreUsuario);
 include("../Vista/editarContrasena.php");
 
 include("../Vista/footer.php");
-
-?>

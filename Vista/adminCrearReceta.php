@@ -50,7 +50,7 @@
             </div>
 
             <div class="linea">
-                <button type="submit">Guardar Receta</button>
+                <button type="submit" name="enviar" value="enviar">Guardar Receta</button>
             </div>
         </form>
     </div>

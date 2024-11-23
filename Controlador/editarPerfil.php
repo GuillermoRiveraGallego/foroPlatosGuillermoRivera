@@ -12,5 +12,3 @@ include("../Vista/headerPerfilLogueado.php");
 include("../Vista/editarPerfil.php");
 
 include("../Vista/footer.php");
-
-?>

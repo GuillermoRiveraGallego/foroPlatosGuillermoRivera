@@ -1,25 +1,35 @@
 <?php
-include("../Control/sesion.php");
-control();
 
-include("../Modelo/consultasRecetas.php");
-include("../Modelo/consultasIngredientes.php");
+if (isset($_POST["modificacionReceta"])){
 
-$ingredientesDeReceta = ingredientesReceta($_POST["idReceta"]);
+        
+        include("../Modelo/consultasRecetas.php");
+        include("../Modelo/consultasIngredientes.php");
+        
+        $ingredientesDeReceta = ingredientesReceta($_POST["idReceta"]);
+        
+        if (empty($ingredientesDeReceta)) {
+        
+            header("Location: ../Controlador/menuAdministradores.php?error=noIngredientes");
+            exit;
+        }
+        
+        foreach ($ingredientesDeReceta as $ingredientes => $ingrediente) {
+        
+            $idIngrediente = $ingrediente["id_ingrediente"];
+            $nombreIngrediente = selectNombreIngredienteID($idIngrediente);
+            $ingredientesDeReceta[$ingredientes]["nombre"] = $nombreIngrediente;
+        }
+        
+        include("../Vista/headerAdministradoresHome.php");
+        include("../Vista/eliminarIngredientesModificacion.php");
+        include("../Vista/footer.php");
 
-if (empty($ingredientesDeReceta)) {
+    
+} else {
 
-    header("Location: ../Controlador/menuAdministradores.php?error=noIngredientes");
+    header("Location: ../Controlador/index.php");
     exit;
+
 }
-
-foreach ($ingredientesDeReceta as $ingredientes => $ingrediente) {
-
-    $idIngrediente = $ingrediente["id_ingrediente"];
-    $nombreIngrediente = selectNombreIngredienteID($idIngrediente);
-    $ingredientesDeReceta[$ingredientes]["nombre"] = $nombreIngrediente;
-}
-
-include("../Vista/headerAdministradoresHome.php");
-include("../Vista/eliminarIngredientesModificacion.php");
-include("../Vista/footer.php");
+    

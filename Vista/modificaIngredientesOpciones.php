@@ -7,7 +7,7 @@
             </form>
 
             <form action="../Controlador/eliminarIngredientesReceta.php" method="post">
-                <input class="boton rojo" type="submit" value="Eliminar Ingredientes Receta" name="modificacionIngredientes">
+                <input class="boton rojo" type="submit" value="Eliminar Ingredientes Receta" name="modificacionReceta">
                 <input type="hidden" name="idReceta" value="<?php echo $idReceta; ?>">
             </form>
         </div>

@@ -2,6 +2,7 @@
 
 include("../Control/sesion.php");
 control();
+
 include("../Modelo/consultasUsuarios.php");
 include("../Modelo/consultasRecetas.php");
 
@@ -25,7 +26,3 @@ $listaIngredientesNuevaReceta = $_POST["nombreIngrediente"];
 include("../Vista/headerAdministradoresHome.php");
 include("../Vista/personalizarIngredientes.php");
 include("../Vista/footer.php");
-
-
-
-?>

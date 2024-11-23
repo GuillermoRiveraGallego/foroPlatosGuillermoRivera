@@ -16,13 +16,11 @@
                 </div>";
             } 
             ?> 
-            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Introduce el usuario" required>
+            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Introduce el usuario" required maxlength="60">
             <button type="submit" class="botonEliminar" name="botonEliminar" value="eliminar">Crear ingrediente</button>
         </form>
     </div>
 </div>
-
-
 
 
 <style>
