@@ -14,6 +14,9 @@
         if (isset($_GET["error"]) && $_GET["error"] == "noIngredientes") {
             echo("<div class='mensajeEliminacion'><span>No contiene ingredientes</span></div>");
         } 
+        if (isset($_GET["error"]) && $_GET["error"] == "SinIngredientes") {
+            echo("<div class='mensajeEliminacion'><span>No se han eliminado ingredientes</span></div>");
+        } 
 ?>
 
 </div>

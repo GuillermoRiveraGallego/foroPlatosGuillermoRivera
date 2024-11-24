@@ -27,7 +27,7 @@ function CrearIngrediente($nombreIngrediente){
 function nombresIngredientes(){
 
     $pdo = conexionBaseDatos();
-    $Ingredientes=$pdo->query("SELECT nombre FROM Ingrediente")->fetchAll(PDO::FETCH_ASSOC);
+    $Ingredientes=$pdo->query("SELECT nombre FROM Ingrediente ORDER BY nombre ASC")->fetchAll(PDO::FETCH_ASSOC);
     return $Ingredientes;
 
 }

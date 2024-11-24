@@ -46,6 +46,29 @@
     
         return true;
     }
+
+
+    
+
+    function devuelveValoracion($id_receta) {
+        $pdo = conexionBaseDatos();
+    
+
+        $cantidadValoraciones = $pdo->query("SELECT COUNT(valoracion) AS cantidad FROM Comentario WHERE id_receta = '$id_receta' AND valoracion IS NOT NULL;")->fetch(PDO::FETCH_ASSOC);
+
+        $ValorValoraciones = $pdo->query("SELECT SUM(valoracion) AS suma FROM Comentario WHERE id_receta = '$id_receta' AND valoracion IS NOT NULL;")->fetch(PDO::FETCH_ASSOC);
+    
+        $valoracionMedia = false;
+    
+        if (isset($cantidadValoraciones['cantidad']) && isset($ValorValoraciones['suma']) && $cantidadValoraciones['cantidad'] > 0) {
+            $valoracionMedia = $ValorValoraciones['suma'] / $cantidadValoraciones['cantidad'];
+        }
+    
+        return $valoracionMedia;
+    }
+    
+
+
     
 
 

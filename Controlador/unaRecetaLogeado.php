@@ -2,7 +2,6 @@
 include("../Control/sesion.php");
 control();
 
-
 include("../Modelo/consultasRecetas.php");
 include("../Modelo/consultasUsuarios.php");
 include("../Modelo/consultasComentarios.php");
@@ -11,6 +10,20 @@ $nombreUsuarioQueComenta = $_SESSION["nombreUsuario"];
 $idUsuarioQueComenta = saberIdNombreUsuario($nombreUsuarioQueComenta);
 
 $receta = verUnaReceta();
+
+
+$mediaCalculada = devuelveValoracion($receta['id']);
+
+if ($mediaCalculada != false){
+
+   $receta['valoracion_media'] = round($mediaCalculada, 1)."/5";
+
+} else {
+
+    $receta['valoracion_media'] = "sin valoraciones";
+
+}
+
 
 $usuarioResultado = NombreUsuarioPorId($receta["id_usuario"]);
 

@@ -7,12 +7,10 @@
         <div class="contenedorIngredientes">
             <?php foreach ($ingredientesDeReceta as $ingrediente): ?>
                 <div class="ingredienteElemento">
-                    <input 
-                        type="checkbox" 
-                        id="ingrediente-<?php echo($ingrediente['id_ingrediente']); ?>" 
-                        name="ingredientesSeleccionados[]" 
-                        value="<?php echo ($ingrediente['id_ingrediente']); ?>"
-                    >
+
+                    <input type="checkbox" id="ingrediente-<?php echo($ingrediente['id_ingrediente']); ?>" name="ingredientesSeleccionados[]" 
+                        value="<?php echo ($ingrediente['id_ingrediente']); ?>">
+
                     <label for="ingrediente-<?php echo htmlspecialchars($ingrediente['id_ingrediente']); ?>">
                         <?php echo ($ingrediente['nombre']); ?> 
                         (<?php echo $ingrediente['cantidad'].' '.($ingrediente['unidad_medida']); ?>)

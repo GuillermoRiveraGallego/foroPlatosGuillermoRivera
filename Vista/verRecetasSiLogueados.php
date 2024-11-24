@@ -30,7 +30,6 @@ foreach($recetas as $receta){
                 <div class='nombreReceta'>$nombre_receta</div>
                 <div class='tipoDeReceta'>$tipo</div>
                 <div class='dificultad'>$dificultad</div>
-                <div class='valoracionMedia'>Valoración Media: $valoracion_media</div>
                 <div class='fechaDeReceta'>Fecha de Creación: $fecha_creacion</div>
                 <div class='fechaDeModificacion'>Fecha de Modificación: $fecha_actualizacion</div>
                  <div class='usuarioReceta'>Autor: " . $nombreDelUsuario . "</div>
