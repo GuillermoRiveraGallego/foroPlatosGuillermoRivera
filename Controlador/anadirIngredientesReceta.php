@@ -2,7 +2,6 @@
 
 if (isset($_POST["modificacionReceta"])){
 
-    
 include("../Modelo/consultasIngredientes.php");
 $todosLosIngredientes = nombresIngredientes();
 

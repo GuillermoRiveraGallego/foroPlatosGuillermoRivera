@@ -2,6 +2,8 @@
 
 if (isset($_POST["modificacionIngredientes"])) {
 
+    
+
     $idReceta = $_POST["id"];
 
     include("../Vista/headerAdministradoresHome.php");

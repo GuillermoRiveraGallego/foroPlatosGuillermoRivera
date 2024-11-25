@@ -16,9 +16,18 @@
             <p><strong>Recetas Creadas:</strong></p>
 
                 <?php
-                    foreach ($recetasDelPerfil as $receta) {
-                        echo $receta["nombre_receta"] . "<br>";
+
+                    if (is_array($recetasDelPerfil)) {
+
+                        foreach ($recetasDelPerfil as $receta) {
+                            echo $receta["nombre_receta"] . "<br>";
                         }
+                        
+                    } else {
+                        echo "<p>No se encontraron recetas asociadas a este usuario.</p>";
+                    }
+
+                     
 
                 ?>
 

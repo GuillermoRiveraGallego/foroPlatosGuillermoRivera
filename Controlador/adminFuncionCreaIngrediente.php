@@ -2,8 +2,6 @@
 include("../Control/sesion.php");
 control();
 
-
-
 include("../Modelo/consultasIngredientes.php");
 $nombreIngredienteCrear = $_POST["nombreUsuario"];
 

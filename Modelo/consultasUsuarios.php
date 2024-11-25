@@ -166,6 +166,13 @@
 		    $pdo->prepare($sql)->execute();
 
         }
-        
 
-?>
+
+        function UsuarioIdNombre(){
+
+            $pdo = conexionBaseDatos();
+            $recetas=$pdo->query("SELECT id,nombre_usuario FROM Usuario")->fetchAll(PDO::FETCH_ASSOC);
+            return $recetas;
+    
+        }
+        

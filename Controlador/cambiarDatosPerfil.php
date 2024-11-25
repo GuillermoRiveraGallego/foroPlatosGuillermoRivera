@@ -3,9 +3,6 @@
 include("../Control/sesion.php");
 control();
 
-
-
-
 include("../Modelo/consultasUsuarios.php");
 
 $nombreUsuario = $_SESSION["nombreUsuario"];

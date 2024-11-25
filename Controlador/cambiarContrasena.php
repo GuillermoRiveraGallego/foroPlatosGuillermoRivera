@@ -2,8 +2,6 @@
 include("../Control/sesion.php");
 control();
 
-
-
 include("../Modelo/consultasUsuarios.php");
 include("../Vista/headerPerfilLogueado.php");
 

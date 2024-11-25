@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
     exit;
 }
 
-if (isset($_SESSION["tiempoInicioSesion"]) && (time() - $_SESSION["tiempoInicioSesion"]) > 1200) {
+if (isset($_SESSION["tiempoInicioSesion"]) && (time() - $_SESSION["tiempoInicioSesion"]) > 120) {
     session_unset();
     session_destroy();
     header("Location: index.php?error=inactividad");

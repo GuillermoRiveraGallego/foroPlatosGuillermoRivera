@@ -6,6 +6,7 @@
         <button class="verde"><a href="../Controlador/adminCrearReceta.php">Crear Receta</a></button>
         <button class="azul"><a href="../Controlador/adminModificaReceta.php">Modificar Receta</a></button>
         <button class="rojo"><a href="../Controlador/adminEliminaReceta.php">Eliminar Receta</a></button>
+        <button class="rojo"><a href="../Controlador/adminVerUsuario.php">Ver Usuario</a></button>
     </div>
     <?php
         if (isset($_GET["recetaCreada"]) && $_GET["recetaCreada"] == "true") {

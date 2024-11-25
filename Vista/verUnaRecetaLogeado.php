@@ -15,7 +15,7 @@
   </div>
   <div class="campo">
     <span class="nombreCampo">Valoración Media:</span>
-    <span class="valorCampo"><?php echo $receta['valoracion_media'] ?? 'No disponible'; ?></span>
+    <span class="valorCampo" style="color: yellow;"><?php echo $receta['valoracion_media'] ?? 'No disponible'; ?></span>
   </div>
   <div class="campo">
     <span class="nombreCampo">Dificultad:</span>

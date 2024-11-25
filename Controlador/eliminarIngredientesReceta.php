@@ -1,8 +1,7 @@
 <?php
 
 if (isset($_POST["modificacionReceta"])){
-
-        
+ 
         include("../Modelo/consultasRecetas.php");
         include("../Modelo/consultasIngredientes.php");
         

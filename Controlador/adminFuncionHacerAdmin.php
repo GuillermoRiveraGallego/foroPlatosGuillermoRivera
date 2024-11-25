@@ -2,8 +2,6 @@
 include("../Control/sesion.php");
 control();
 
-
-
 $nombreUsuarioHacerAdmin = $_POST["nombreUsuario"];
 
 include("../Modelo/consultasUsuarios.php");
